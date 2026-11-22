@@ -41,7 +41,7 @@ Most UI theme libraries ship megabytes of runtime CSS-in-JS or washed-out light 
 - **Best Used For:** Job boards, SaaS dashboards, focus/study apps, wellness tools, and consumer web/mobile apps where calming anxiety, boosting midday focus, or softening late-night glare directly improves retention.
 - **When It Shines:** Drop it in at project kickoff or during a UX polish pass to ship morning, midday, romantic dusk, and zero-glare night modes in under 60 seconds.
 - **Runs Everywhere:** Native CSS variables for **Next.js, Tailwind CSS, Vite, and plain HTML**, plus flat JSON tokens for **React Native, Flutter, SwiftUI, and Jetpack Compose**.
-- **Production Proof:** Powers all 12 instant-switch themes inside **[Openflex](https://github.com/kelli-dotcom/openflex)**.
+- **Production Proof:** Powers all 12 instant-switch themes inside **Openflex** *(CRTA Proprietary Platform)*.
 
 ---
 
@@ -138,7 +138,7 @@ Read the full guide in **[`CONTRIBUTING.md`](CONTRIBUTING.md)** · **[Open an Is
 
 | Repository | What It Does |
 | :--- | :--- |
-| **[openflex](https://github.com/kelli-dotcom/openflex)** | Zero-cost, anti-ghost, Remote-Truth job board *(powered by Feather Themes)* |
+| **Openflex** *(CRTA Proprietary Platform)* | Zero-cost, anti-ghost, Remote-Truth job board *(powered by Feather Themes)* |
 | **[feather-themes](https://github.com/kelli-dotcom/feather-themes)** | 1,092 photobiology-calibrated, 0-dep WCAG AA/AAA themes *(this repo)* |
 | **[agent-etiquette](https://github.com/kelli-dotcom/agent-etiquette)** | Multi-agent workflow rules, JSON handoff schemas & Rule of 2 loop caps |
 | **[archetype-agent-vault](https://github.com/kelli-dotcom/archetype-agent-vault)** | 7 character-driven AI coding agent suites (27 specialists) |
