@@ -3,19 +3,19 @@
 > **Owner:** CRTA Tech Solutions  
 > **Repository:** `https://github.com/kelli-dotcom/feather-themes`  
 > **Production Proof:** Powers all 12 themes in `https://github.com/kelli-dotcom/openflex`  
-> **Status:** `v1.0.0` — Live, MIT-licensed, 0 dependencies, 12 themes shipped
+> **Status:** `v2.0.0` — 1,092 WCAG 2.1 AA/AAA Verified Scientific Themes, 0-Dep CLI & Interactive HTML Explorer Live
 
 ## Completed
-- [x] `themes/themes.css` — 12 zero-dependency CSS-variable themes (~2 KB total).
-- [x] `themes/tokens.json` — Cross-platform JSON design tokens for Web, React Native, Flutter, iOS SwiftUI, and Android Compose.
-- [x] `design-spec/THEME_SPEC.md` — Master Web & App lightweight theme specification.
-- [x] `skills/lightweight-themes/SKILL.md` — Reusable AI agent skill.
-- [x] Registered in `/Users/kelli/Documents/CRTA-Master-Spec/`.
+- [x] `src/engine.mjs` — Deterministic scientific color engine generating **1,080 themes** across 10 cognitive/emotional states (`Calm`, `Focus`, `Energy`, `Romantic`, `Morning`, `Midday`, `Dusk`, `Night`, `Grounded`, `Executive`) + WCAG 2.1 contrast verifier.
+- [x] `bin/feather-themes.mjs` — Zero-dependency CLI (`list`, `apply --format=css|json|tailwind --out=...`, `verify-all`).
+- [x] `preview/index.html` — Live browser explorer for all 1,080+ themes with 1-click Copy CSS / Copy JSON.
+- [x] Verified **`1,092 / 1,092`** themes pass WCAG 2.1 AA & AAA primary text contrast.
+- [x] Registered in `/Users/kelli/Documents/CRTA-Master-Spec/` with full Clarity & Positioning story.
 
 ## Verification Command
 ```bash
-node -e 'JSON.parse(require("fs").readFileSync("themes/tokens.json","utf8")); console.log("tokens.json OK")'
+bun bin/feather-themes.mjs verify-all
 ```
 
 ## Exact Next Step
-1. Share `feather-themes` alongside Openflex so developers can drop the same 12 mood & developer themes into their own apps in 30 seconds.
+1. Share `feather-themes` alongside `openflex` or publish to npm (`npm publish`) if you want `npx feather-themes apply ...` to work globally without cloning.

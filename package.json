@@ -1,0 +1,26 @@
+{
+  "name": "feather-themes",
+  "version": "2.0.0",
+  "description": "1,092 scientifically calibrated, zero-dependency, WCAG-AA verified themes (10 cognitive/emotional states) + CLI & AI agent skill for web and mobile apps. Used in Openflex.",
+  "type": "module",
+  "main": "src/engine.mjs",
+  "bin": {
+    "feather-themes": "./bin/feather-themes.mjs"
+  },
+  "scripts": {
+    "verify": "node bin/feather-themes.mjs verify-all",
+    "list": "node bin/feather-themes.mjs list"
+  },
+  "keywords": [
+    "themes",
+    "css-variables",
+    "design-tokens",
+    "color-science",
+    "wcag",
+    "dark-mode",
+    "tailwindcss",
+    "openflex"
+  ],
+  "author": "CRTA Tech Solutions",
+  "license": "MIT"
+}

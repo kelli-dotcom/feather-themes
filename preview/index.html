@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feather Themes — 1,092 Scientific Mood Themes Explorer</title>
+  <style>
+    :root { --ft-bg:#09090b; --ft-surface:#18181b; --ft-border:#27272a; --ft-text:#f4f4f5; --ft-muted:#a1a1aa; --ft-accent:#10b981; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, sans-serif; background:var(--ft-bg); color:var(--ft-text); transition: background .15s, color .15s; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 32px 20px; }
+    .bar { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0; padding:16px; border:1px solid var(--ft-border); background:var(--ft-surface); border-radius:6px; }
+    select, input, button { padding:8px 12px; border-radius:5px; border:1px solid var(--ft-border); background:var(--ft-bg); color:var(--ft-text); font-size:13px; cursor:pointer; }
+    button.primary { background:var(--ft-accent); color:#09090b; border-color:transparent; font-weight:700; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap:12px; }
+    .card { padding:14px; border-radius:6px; border:1px solid var(--ft-border); background:var(--ft-surface); cursor:pointer; }
+    .swatches { display:flex; gap:6px; margin:10px 0; }
+    .dot { width:22px; height:22px; border-radius:4px; border:1px solid rgba(255,255,255,.15); }
+    .meta { font-size:11px; color:var(--ft-muted); font-family: monospace; }
+    pre { padding:14px; border-radius:6px; border:1px solid var(--ft-border); background:var(--ft-surface); overflow:auto; font-size:12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 style="margin:0 0 6px">Feather Themes — 1,080+ Scientific Mood Themes</h1>
+    <p style="margin:0;color:var(--ft-muted);font-size:14px">Zero dependencies · WCAG 2.1 AA verified · Built by CRTA Tech Solutions · Powers <strong>Openflex</strong></p>
+
+    <div class="bar">
+      <select id="stateFilter"></select>
+      <select id="modeFilter">
+        <option value="all">All Modes (Dark / Dim / Light)</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+      <button id="copyCss" class="primary">Copy Active CSS</button>
+      <button id="copyJson">Copy Active JSON</button>
+      <span id="status" class="meta" style="align-self:center;margin-left:auto"></span>
+    </div>
+
+    <pre id="codeOut">Click any theme card below to preview it live and copy its CSS or JSON tokens.</pre>
+    <div id="grid" class="grid" style="margin-top:16px"></div>
+  </div>
+
+  <script type="module">
+    import { COGNITIVE_STATES, generateAllScientificThemes, toCssBlock } from "../src/engine.mjs";
+    const themes = generateAllScientificThemes();
+    const stateSel = document.getElementById("stateFilter");
+    const modeSel = document.getElementById("modeFilter");
+    const grid = document.getElementById("grid");
+    const codeOut = document.getElementById("codeOut");
+    const status = document.getElementById("status");
+    let active = themes[0];
+
+    stateSel.innerHTML = `<option value="all">All 10 Cognitive States (${themes.length})</option>` +
+      COGNITIVE_STATES.map(s => `<option value="${s.id}">${s.label} — ${s.science}</option>`).join("");
+
+    function applyTheme(t) {
+      active = t;
+      const r = document.documentElement.style;
+      r.setProperty("--ft-bg", t.tokens.bg);
+      r.setProperty("--ft-surface", t.tokens.surface);
+      r.setProperty("--ft-border", t.tokens.border);
+      r.setProperty("--ft-text", t.tokens.text);
+      r.setProperty("--ft-muted", t.tokens.muted);
+      r.setProperty("--ft-accent", t.tokens.accent);
+      codeOut.textContent = toCssBlock(t);
+      status.textContent = `Active: ${t.id} · Contrast ${t.wcag.textContrast}:1 (WCAG ${t.wcag.aaaText ? "AAA" : "AA"})`;
+    }
+
+    function render() {
+      const st = stateSel.value;
+      const md = modeSel.value;
+      const list = themes.filter(t => (st === "all" || t.state === st) && (md === "all" || t.mode === md));
+      grid.innerHTML = "";
+      for (const t of list.slice(0, 120)) {
+        const el = document.createElement("div");
+        el.className = "card";
+        el.style.background = t.tokens.surface;
+        el.style.borderColor = t.tokens.border;
+        el.style.color = t.tokens.text;
+        el.innerHTML = `
+          <div style="font-weight:700;font-size:13px">${t.label}</div>
+          <div class="meta" style="color:${t.tokens.muted}">${t.id} · ${t.wcag.textContrast}:1</div>
+          <div class="swatches">
+            <span class="dot" style="background:${t.tokens.bg}" title="bg"></span>
+            <span class="dot" style="background:${t.tokens.surface}" title="surface"></span>
+            <span class="dot" style="background:${t.tokens.border}" title="border"></span>
+            <span class="dot" style="background:${t.tokens.text}" title="text"></span>
+            <span class="dot" style="background:${t.tokens.accent}" title="accent"></span>
+          </div>`;
+        el.onclick = () => applyTheme(t);
+        grid.appendChild(el);
+      }
+      status.textContent = `Showing ${Math.min(120, list.length)} of ${list.length} themes (Catalog: ${themes.length})`;
+    }
+
+    document.getElementById("copyCss").onclick = () => navigator.clipboard.writeText(toCssBlock(active));
+    document.getElementById("copyJson").onclick = () => navigator.clipboard.writeText(JSON.stringify(active.tokens, null, 2));
+    stateSel.onchange = render;
+    modeSel.onchange = render;
+    applyTheme(themes[0]);
+    render();
+  </script>
+</body>
+</html>
