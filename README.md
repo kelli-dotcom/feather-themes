@@ -95,6 +95,22 @@ localStorage.setItem("app-theme", "morning-rose");
 
 ---
 
+## 🤝 Contributing
+
+We welcome new photobiology wavelength palettes, zero-dependency framework exporters (Tailwind, Expo, SwiftUI, Compose), and preview improvements from both **human developers** and **AI coding agents**:
+
+```bash
+# 1. Fork & create a feature branch
+git checkout -b feat/your-theme-or-exporter
+
+# 2. Build & verify 100% WCAG 2.1 AA/AAA contrast compliance (0 errors required)
+node bin/feather-themes.mjs build && node bin/feather-themes.mjs verify
+```
+
+Read the full guide in **[`CONTRIBUTING.md`](CONTRIBUTING.md)** · **[Open an Issue](https://github.com/kelli-dotcom/feather-themes/issues)** · **[Submit a Pull Request](https://github.com/kelli-dotcom/feather-themes/pulls)**
+
+---
+
 ## 🌐 CRTA Tech Solutions Open-Source Ecosystem
 
 | Repository | What It Does |
