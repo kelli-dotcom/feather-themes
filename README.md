@@ -21,6 +21,10 @@
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="MIT License" />
 </p>
 
+<p align="center">
+  <img src="assets/demo.gif" alt="Feather Themes Live Theme Switching Demo" width="90%" />
+</p>
+
 ```bash
 # Browse 1,092 photobiology themes by cognitive state & apply in 1 command:
 node bin/feather-themes.mjs list --state=calm --mode=dark
