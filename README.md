@@ -64,19 +64,21 @@ Every generated theme combines **10 light-wavelength states × 18 harmonic base 
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (PC / Laptop & Mobile)
+
+### 💻 1. PC / Laptop Quick Start (Mac, Windows, Linux & Chromebook)
 
 ```bash
-# 1. Clone Feather Themes
+# 1. Clone Feather Themes (0 npm dependencies)
 git clone https://github.com/kelli-dotcom/feather-themes.git && cd feather-themes
 
-# 2. Export any of the 1,092 themes to CSS, JSON (mobile), or Tailwind
+# 2. Export any of the 1,092 WCAG 2.1 AA/AAA themes to CSS, JSON (mobile), or Tailwind
 node bin/feather-themes.mjs apply morning-rose --format=css --out=./theme.css
 node bin/feather-themes.mjs apply golden-hour --format=json --out=./theme.json
 node bin/feather-themes.mjs apply calm-01-dark-crisp --format=tailwind
 
-# 3. Or visually browse & copy all 1,080+ themes live in your browser
-npx serve .   # open /preview/index.html
+# 3. Visually browse & copy all 1,092 themes live in your browser
+npx serve .   # or open preview/index.html directly in any browser!
 ```
 
 Switch themes at runtime in 1 line:
@@ -84,6 +86,27 @@ Switch themes at runtime in 1 line:
 document.documentElement.dataset.theme = "morning-rose";
 localStorage.setItem("app-theme", "morning-rose");
 ```
+
+### 📱 2. Mobile Quick Start (iPhone, iPad & Android)
+
+<details>
+<summary><strong>📱 Download &amp; Use on Mobile (iOS / Android)</strong></summary>
+
+<br />
+
+1. **1-Tap Direct Download:**  
+   👉 **[Download ZIP (Mobile-Friendly)](https://github.com/kelli-dotcom/feather-themes/archive/refs/heads/main.zip)**
+
+2. **Quick Unzip Steps:**
+   - **iPhone / iPad (iOS):** Open **Files** → **Downloads** → tap `feather-themes-main.zip` once to unzip.
+   - **Android:** Open **Files by Google** (or **My Files**) → **Downloads** → tap `feather-themes-main.zip` → tap **Extract**.
+   - **Mobile Browser Tip:** Tap the browser menu (`AA` or `⋮`) → **Request Desktop Website** to reveal GitHub's green **Code → Download ZIP** button anytime.
+
+3. **Preview & Use Immediately on Mobile:**
+   - **Instant Offline Theme Explorer:** After unzipping on iOS or Android, tap `preview/index.html` in your Files app to open the interactive theme explorer right in mobile Safari/Chrome (`0` server required).
+   - **Attach in Gemini / Claude / ChatGPT Mobile Apps:** Attach `skills/lightweight-themes/SKILL.md` or `themes/tokens.json` in chat (or upload once to a **Gemini Gem / Claude Project**) to theme any web or mobile app on the go.
+
+</details>
 
 ---
 
