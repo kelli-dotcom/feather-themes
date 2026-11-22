@@ -1,0 +1,137 @@
+/* Feather Themes — 12 Zero-Dependency Lightweight Themes (~2 KB total)
+ * Built by CRTA Tech Solutions | MIT License
+ * Used in Openflex: https://github.com/kelli-dotcom/openflex
+ */
+
+:root,
+[data-theme="obsidian"] {
+  color-scheme: dark;
+  --ft-bg: #09090b;
+  --ft-surface: rgba(24, 24, 27, 0.72);
+  --ft-surface-solid: #18181b;
+  --ft-border: #27272a;
+  --ft-text: #f4f4f5;
+  --ft-muted: #a1a1aa;
+  --ft-accent: #10b981;
+}
+
+[data-theme="morning-rose"] {
+  color-scheme: light;
+  --ft-bg: #fdf6f4;
+  --ft-surface: #fffbfa;
+  --ft-surface-solid: #fffbfa;
+  --ft-border: #e7d4cf;
+  --ft-text: #271b1d;
+  --ft-muted: #6e565b;
+  --ft-accent: #be5a74;
+}
+
+[data-theme="midday-sunlit"] {
+  color-scheme: light;
+  --ft-bg: #fcfaf2;
+  --ft-surface: #ffffff;
+  --ft-surface-solid: #ffffff;
+  --ft-border: #e5dec9;
+  --ft-text: #1c1917;
+  --ft-muted: #57534e;
+  --ft-accent: #0f766e;
+}
+
+[data-theme="golden-hour"] {
+  color-scheme: dark;
+  --ft-bg: #1c1317;
+  --ft-surface: rgba(41, 28, 34, 0.88);
+  --ft-surface-solid: #291c22;
+  --ft-border: #4a333d;
+  --ft-text: #f7ebe8;
+  --ft-muted: #d6b2ba;
+  --ft-accent: #e5989b;
+}
+
+[data-theme="calm-lavender"] {
+  color-scheme: dark;
+  --ft-bg: #161524;
+  --ft-surface: rgba(33, 31, 54, 0.88);
+  --ft-surface-solid: #211f36;
+  --ft-border: #3a375c;
+  --ft-text: #eceaf9;
+  --ft-muted: #b4afd8;
+  --ft-accent: #a78bfa;
+}
+
+[data-theme="tokyo-night"] {
+  color-scheme: dark;
+  --ft-bg: #1a1b26;
+  --ft-surface: rgba(36, 40, 59, 0.85);
+  --ft-surface-solid: #24283b;
+  --ft-border: #3b4261;
+  --ft-text: #c0caf5;
+  --ft-muted: #7aa2f7;
+  --ft-accent: #7dcfff;
+}
+
+[data-theme="catppuccin"] {
+  color-scheme: dark;
+  --ft-bg: #1e1e2e;
+  --ft-surface: rgba(49, 50, 68, 0.82);
+  --ft-surface-solid: #313244;
+  --ft-border: #45475a;
+  --ft-text: #cdd6f4;
+  --ft-muted: #a6adc8;
+  --ft-accent: #a6e3a1;
+}
+
+[data-theme="dracula"] {
+  color-scheme: dark;
+  --ft-bg: #1e1f29;
+  --ft-surface: rgba(40, 42, 54, 0.88);
+  --ft-surface-solid: #282a36;
+  --ft-border: #44475a;
+  --ft-text: #f8f8f2;
+  --ft-muted: #bd93f9;
+  --ft-accent: #50fa7b;
+}
+
+[data-theme="forest"] {
+  color-scheme: dark;
+  --ft-bg: #08120e;
+  --ft-surface: rgba(15, 31, 24, 0.86);
+  --ft-surface-solid: #0f1f18;
+  --ft-border: #1e3a2f;
+  --ft-text: #e6f4ee;
+  --ft-muted: #86b3a0;
+  --ft-accent: #34d399;
+}
+
+[data-theme="nord"] {
+  color-scheme: dark;
+  --ft-bg: #2e3440;
+  --ft-surface: rgba(59, 66, 82, 0.85);
+  --ft-surface-solid: #3b4252;
+  --ft-border: #4c566a;
+  --ft-text: #eceff4;
+  --ft-muted: #d8dee9;
+  --ft-accent: #88c0d0;
+}
+
+[data-theme="paper-light"] {
+  color-scheme: light;
+  --ft-bg: #f8fafc;
+  --ft-surface: #ffffff;
+  --ft-surface-solid: #ffffff;
+  --ft-border: #cbd5e1;
+  --ft-text: #0f172a;
+  --ft-muted: #475569;
+  --ft-accent: #059669;
+}
+
+[data-theme="sandstone"] {
+  color-scheme: light;
+  --ft-bg: #f5f2eb;
+  --ft-surface: #fffdf9;
+  --ft-surface-solid: #fffdf9;
+  --ft-border: #d6cfc2;
+  --ft-text: #1c1917;
+  --ft-muted: #57534e;
+  --ft-accent: #047857;
+}
