@@ -1,0 +1,19 @@
+# Feather Themes
+
+> Zero-dependency, ultra-lightweight (~300B/theme) scientific photobiology CSS & JSON theme engine (1,092 WCAG 2.1 AA/AAA verified themes) + AI agent skill for web and mobile apps.
+
+## Agent Entry Points (All Models)
+- `AGENTS.md` — Project guardrails and model-agnostic rules.
+- `HANDOFF.md` — Active state, verification command, and next step.
+- `mistakes.md` — Permanent "Never Repeat" guardrail log.
+- `design-spec/THEME_SPEC.md` — Photobiology wavelength states and WCAG contrast rules.
+- `skills/lightweight-themes/SKILL.md` — Reusable AI agent skill for ultra-light theming.
+
+## Key Paths
+- `src/engine.mjs` — Deterministic 1,092-theme generator & WCAG contrast verifier.
+- `bin/feather-themes.mjs` — Zero-dependency CLI (`build`, `verify`, `list`).
+- `themes/themes.css` & `themes/tokens.json` — Generated production tokens.
+- `preview/index.html` — Live zero-dependency interactive theme explorer.
+
+## Verification Command
+`node bin/feather-themes.mjs verify`
