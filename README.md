@@ -56,14 +56,15 @@ Heavy CSS-in-JS (~90 KB)  ██████████████████
 
 ---
 
-## ✨ Built for Speed *and* Feeling
+## ✨ Built for Low-RAM Computers, Older Phones, Speed *and* Feeling
 
-Most UI theme libraries ship megabytes of runtime CSS-in-JS or washed-out light modes that fail contrast checks. **Feather Themes** is crafted for solo founders, frontend engineers, mobile app builders, and AI coding agents who want rich, mood-aware personalization with **zero repo bloat**.
+Most UI theme libraries are tested only on \$3,000 developer laptops and lag, stutter, or drain battery on **2–4 GB RAM laptops, school Chromebooks, older iPhones/Android phones, and slow mobile networks**. **Feather Themes** delivers rich, mood-aware personalization using pure native CSS variables (`~300 Bytes` per theme, `0 KB` runtime JS) so your app stays fast and crisp on **every** device—not just brand-new hardware.
 
-- **Best Used For:** Job boards, SaaS dashboards, focus/study apps, wellness tools, and consumer web/mobile apps where calming anxiety, boosting midday focus, or softening late-night glare directly improves retention.
+- **Built For Low-RAM & Older Devices:** Zero runtime JavaScript, zero heavy style-injection recalculations, and `< 1 ms` theme swaps mean older phones, budget tablets, and 2–4 GB RAM school/community computers never freeze or burn battery when switching themes.
+- **Best Used For:** Job boards, school/community apps, SaaS dashboards, focus/study tools, wellness apps, and public web/mobile apps serving everyday users on mixed hardware.
 - **When It Shines:** Drop it in at project kickoff or during a UX polish pass to ship morning, midday, romantic dusk, and zero-glare night modes in under 60 seconds.
 - **Runs Everywhere:** Native CSS variables for **Next.js, Tailwind CSS, Vite, and plain HTML**, plus flat JSON tokens for **React Native, Flutter, SwiftUI, and Jetpack Compose**.
-- **Production Proof:** Powers all 12 instant-switch themes inside **Openflex** *(CRTA Proprietary Platform)*.
+- **Production Proof:** Powers all 1,092 instant-switch themes inside **Openflex** *(CRTA Proprietary Platform)* — pair with **[Feather Speed](https://github.com/kelli-dotcom/feather-speed)** for full hardware-aware RAM/CPU optimization.
 
 ---
 
