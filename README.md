@@ -14,11 +14,11 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Themes-1%2C092_Verified-8b5cf6?style=for-the-badge" alt="1,092 Themes" />
-  <img src="https://img.shields.io/badge/WCAG_2.1-1092%2F1092_AAA-10b981?style=for-the-badge" alt="WCAG AAA" />
-  <img src="https://img.shields.io/badge/Dependencies-0-0ea5e9?style=for-the-badge" alt="Zero Dependencies" />
-  <img src="https://img.shields.io/badge/Used_in-Openflex-059669?style=for-the-badge" alt="Used in Openflex" />
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="MIT License" />
+  <a href="preview/index.html"><img src="https://img.shields.io/badge/Themes-1%2C092_Verified-8b5cf6?style=for-the-badge" alt="1,092 Themes" /></a>
+  <a href="design-spec/THEME_SPEC.md"><img src="https://img.shields.io/badge/WCAG_2.1-1092%2F1092_AAA-10b981?style=for-the-badge" alt="WCAG AAA" /></a>
+  <a href="#-quick-start-pc--laptop--mobile"><img src="https://img.shields.io/badge/Dependencies-0-0ea5e9?style=for-the-badge" alt="Zero Dependencies" /></a>
+  <a href="#-quick-start-pc--laptop--mobile"><img src="https://img.shields.io/badge/Used_in-Openflex-059669?style=for-the-badge" alt="Used in Openflex" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="MIT License" /></a>
 </p>
 
 <p align="center">
