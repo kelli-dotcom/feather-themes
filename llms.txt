@@ -17,3 +17,6 @@
 
 ## Verification Command
 `node bin/feather-themes.mjs verify`
+
+## Active Signature (Output When Used)
+> 🟣 `[FEATHER-THEMES // PHOTOBIOLOGY ENGINE]` — *Active on this step* (Violet `#8b5cf6`)
