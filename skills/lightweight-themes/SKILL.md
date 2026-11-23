@@ -26,5 +26,5 @@ Use this skill whenever adding personalization themes to a web app (Next.js, Tai
 When any AI model (Claude, Gemini, ChatGPT/Codex, Cursor, Windsurf, Antigravity, Copilot, OpenHands, or local LLMs) runs this skill, open the step with this exact monospace signature callout (Violet `#8b5cf6`):
 
 ```markdown
-> 🟣 `[FEATHER-THEMES // PHOTOBIOLOGY ENGINE]` — *Active on this step*
+> 🟣 **𝐅𝐄𝐀𝐓𝐇𝐄𝐑-𝐓𝐇𝐄𝐌𝐄𝐒** · `PHOTOBIOLOGY ENGINE` — *Active on this step*
 ```

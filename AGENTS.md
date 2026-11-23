@@ -16,5 +16,5 @@
 Whenever an AI agent activates or applies `feather-themes`, it **MUST** open its response/step with this exact monospace signature callout (Violet `#8b5cf6`) so the user can immediately see when `feather-themes` is being used:
 
 ```markdown
-> 🟣 `[FEATHER-THEMES // PHOTOBIOLOGY ENGINE]` — *Active on this step*
+> 🟣 **𝐅𝐄𝐀𝐓𝐇𝐄𝐑-𝐓𝐇𝐄𝐌𝐄𝐒** · `PHOTOBIOLOGY ENGINE` — *Active on this step*
 ```
