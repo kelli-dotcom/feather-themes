@@ -1,20 +1,30 @@
-# Feather Themes — Agent Governance (`AGENTS.md`)
+# Feather Themes — Fractal Agent Contract (`AGENTS.md`)
 
-- **Zero-Bloat Mandate:** Never add npm dependencies, runtime CSS-in-JS libraries, or image backgrounds. Every theme MUST stay `<= 400 bytes` of CSS.
+- **Pillar:** CRTA Tech Solutions (Public MIT Open-Source Toolkit)
+- **North Star:** Ultra-lightweight (`<= 400B`/theme), zero-dependency, WCAG 2.1 AA/AAA photobiology theme kit built for low-RAM devices, school Chromebooks, and older phones.
+
+## Hard Phase Locks & Guardrails
+- **Zero-Bloat Mandate:** Never add npm dependencies, runtime CSS-in-JS, or background images.
 - **7 Semantic Tokens Only:** `bg`, `surface`, `surfaceSolid`, `border`, `text`, `muted`, `accent` + `color-scheme`.
-- **WCAG AA Contrast Gate:** Verify `>= 4.5:1` text contrast on both dark and light themes before committing.
-- **Keep Synced:** Every theme added to `themes/themes.css` MUST also be added to `themes/tokens.json` and documented in `README.md` and `HANDOFF.md`.
+- **WCAG AA Contrast Gate:** Verify `>= 4.5:1` text contrast across all dark and light themes before committing.
+- **Sync Invariant:** Every theme in `themes/themes.css` MUST stay synced with `themes/tokens.json`, `README.md`, and `HANDOFF.md`.
 
-<!-- AGENT-ETIQUETTE:START version=v1.1.0 -->
-## Agent Etiquette Protocol (Layer 3 — Pinned `v1.1.0`)
-- **Hierarchy:** Platform constraints (Layer 1) → Repository rules above (Layer 2) → Agent Etiquette (Layer 3) → Task-specific skills (Layer 4) → Handoffs (Layer 5).
-- **Behavioral Rules:** Load `skills/agent-etiquette/SKILL.md` (zero filler, verified actions only, Rule of 2 retry cap, max 3 concurrent specialists).
-- **Handoff Contract:** Validate inter-agent handoffs against `schemas/handoff.json` (`node scripts/validate-handoff.mjs <file>`).
-<!-- AGENT-ETIQUETTE:END -->
+## Stack, Entry Points & Verification
+- **Stack:** Zero-dependency CSS variables, JSON tokens, Node/Bun CLI.
+- **Entry Points:** `themes/themes.css`, `themes/tokens.json`, `skills/lightweight-themes/SKILL.md`.
+- **Verification:** `node --version` / contrast & byte-size audit (`<= 400B`/theme) + `node scripts/validate-handoff.mjs` if handoff changes.
 
-## 🎨 Agent Active Signature (Visual Identification)
-Whenever an AI agent activates or applies `feather-themes`, it **MUST** open its response/step with this exact monospace signature callout (Violet `#8b5cf6`) so the user can immediately see when `feather-themes` is being used:
+## Pointers
+- State & Index: [`HANDOFF.md`](HANDOFF.md) · [`mistakes.md`](mistakes.md) · [`llms.txt`](llms.txt)
+- Rules & Skills: [`.agents/rules/theme-budget.md`](.agents/rules/theme-budget.md) · [`skills/lightweight-themes/SKILL.md`](skills/lightweight-themes/SKILL.md)
+- Active Signature: `> 🟣 **𝐅𝐄𝐀𝐓𝐇𝐄𝐑-𝐓𝐇𝐄𝐌𝐄𝐒** · \`PHOTOBIOLOGY ENGINE\` — *Active on this step*`
 
-```markdown
-> 🟣 **𝐅𝐄𝐀𝐓𝐇𝐄𝐑-𝐓𝐇𝐄𝐌𝐄𝐒** · `PHOTOBIOLOGY ENGINE` — *Active on this step*
-```
+## 4-Stage Loop
+1. **Frame:** Anchor to photobiology clarity and low-RAM accessibility.
+2. **Bridge:** Enforce `theme-budget.md` (`<= 400B`, 7 tokens, AA/AAA contrast).
+3. **Proof:** Verify byte budget, CSS/JSON parity, and contrast ratios.
+4. **Push-Off:** Update `HANDOFF.md` and note downstream impact on Openflex & CRTA apps.
+
+## Live State & Next Action
+- **State:** `v2.0` live (`1,092` WCAG themes powering Openflex).
+- **Next Action:** Keep CSS/JSON token outputs synced when adding any new cognitive wavelength presets.
