@@ -1,0 +1,66 @@
+/* Feather Navigation — one simple menu, feather light.
+   Use on its own, or with ui/fonts.css, ui/buttons.css,
+   ui/layout.css, ui/forms.css, ui/graphics.css, ui/icons.svg,
+   and ui/animations.css.
+   One menu, that works on a phone and on a computer, with
+   no library to load to do it. Links are in a row on a
+   computer, and in a column on a phone, with 44px tall
+   touch targets, and a clear focus outline, so a keyboard
+   user can see where they are.
+   Colours come only from the theme tokens in themes/themes.css,
+   so navigation flips with data-theme and with auto time mode,
+   with no extra code. No new colours, no hardcoded colours.
+   Source: feather-themes for tokens, feather-speed for
+   lightness, repoverse-master FEATHER_STANDARD.md for the
+   budgets. Plain words, from empathy-marketing-skills.
+
+   How to use: .ft-nav for the bar, .ft-nav-list for the
+   links, .ft-nav-link for one link, .ft-nav-current for
+   the page you are on now. The menu button, if you need
+   one on a phone, is .ft-btn from ui/buttons.css, with
+   the menu icon from ui/icons.svg. */
+
+.ft-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.ft-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .ft-nav-list {
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
+.ft-nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--ft-text);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.ft-nav-link:hover,
+.ft-nav-link:focus-visible {
+  border-color: var(--ft-accent);
+  outline: none;
+}
+
+.ft-nav-current {
+  border-color: var(--ft-accent);
+  font-weight: 600;
+}
