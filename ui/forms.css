@@ -1,0 +1,57 @@
+/* Feather Forms — clear boxes to type in, feather light.
+   Use on its own, or with ui/fonts.css, ui/buttons.css,
+   ui/layout.css, ui/graphics.css, ui/icons.svg, and
+   ui/animations.css.
+   Labels are plain words, above the box, never inside it
+   as the only label. Boxes are big enough to tap, 44px
+   tall at least, with a clear focus outline, so a keyboard
+   user can see where they are.
+   Colours come only from the theme tokens in themes/themes.css,
+   so forms flip with data-theme and with auto time mode,
+   with no extra code. No new colours, no hardcoded colours.
+   Source: feather-themes for tokens, feather-speed for
+   lightness, repoverse-master FEATHER_STANDARD.md for the
+   budgets. Plain words, from empathy-marketing-skills.
+
+   How to use: .ft-field wraps a label and a box, .ft-input
+   for text, email, and password, .ft-textarea for long text,
+   .ft-select for a list, .ft-hint for help under a box. */
+
+.ft-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ft-label {
+  font-weight: 600;
+}
+
+.ft-input,
+.ft-textarea,
+.ft-select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  font: inherit;
+  color: var(--ft-text);
+  background: var(--ft-bg);
+  border: 1px solid var(--ft-border);
+  border-radius: 10px;
+}
+
+.ft-textarea {
+  min-height: 120px;
+}
+
+.ft-input:focus-visible,
+.ft-textarea:focus-visible,
+.ft-select:focus-visible {
+  outline: 2px solid var(--ft-accent);
+  outline-offset: 2px;
+}
+
+.ft-hint {
+  color: var(--ft-muted);
+  font-size: 0.88rem;
+}
