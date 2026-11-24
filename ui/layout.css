@@ -1,0 +1,68 @@
+/* Feather Layout — one grid, one spacing scale, feather light.
+   Use on its own, or with ui/fonts.css, ui/buttons.css,
+   ui/graphics.css, ui/icons.svg, and ui/animations.css.
+   Spacing is 8, 16, 24, 32, and 48 only. If a space is not
+   one of those, use the closest one, do not invent a new one.
+   Colours come only from the theme tokens in themes/themes.css,
+   so layout flips with data-theme and with auto time mode,
+   with no extra code. No new colours, no hardcoded colours.
+   Source: feather-themes for tokens, feather-speed for
+   lightness, repoverse-master FEATHER_STANDARD.md for the
+   budgets. Plain words, from empathy-marketing-skills.
+
+   How to use: .ft-wrap for the page width, .ft-stack for
+   things in a column with space between them, .ft-grid
+   for things side by side, .ft-card for a box with a border,
+   .ft-section for space above and below a block. */
+
+.ft-wrap {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.ft-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ft-stack-tight {
+  gap: 8px;
+}
+
+.ft-stack-loose {
+  gap: 24px;
+}
+
+.ft-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .ft-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .ft-grid-three {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.ft-card {
+  background: var(--ft-surface-solid);
+  border: 1px solid var(--ft-border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.ft-section {
+  padding: 48px 0;
+}
+
+.ft-section-tight {
+  padding: 24px 0;
+}
