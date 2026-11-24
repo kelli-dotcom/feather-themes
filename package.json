@@ -4,6 +4,17 @@
   "description": "1,092 scientifically calibrated, zero-dependency, WCAG-AA verified themes (10 cognitive/emotional states) + CLI & AI agent skill for web and mobile apps. Used in Openflex.",
   "type": "module",
   "main": "src/engine.mjs",
+  "files": [
+    "themes/",
+    "src/",
+    "bin/",
+    "switcher/",
+    "auto/",
+    "skills/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "bin": {
     "feather-themes": "./bin/feather-themes.mjs"
   },

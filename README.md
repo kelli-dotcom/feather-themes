@@ -133,6 +133,22 @@ localStorage.setItem("app-theme", "morning-rose");
 
 ---
 
+## 📦 Install & Updates (Opt-In)
+
+Install one pinned version. Nothing updates on its own.
+
+```bash
+npm install feather-themes@2.0.0
+```
+
+To get an update, read `CHANGELOG.md` first, then update only if you want it:
+
+```bash
+npm update feather-themes
+```
+
+There is no auto push and no auto download. A dev can stay on the old version for as long as they want, and nothing in their project changes until they run the update. Every release lists what changed, what breaks, and what to check, in plain words, in `CHANGELOG.md`.
+
 ## 🤖 AI Agent Skill & Spec Included
 
 - **Reusable AI Agent Skill:** [`skills/lightweight-themes/SKILL.md`](skills/lightweight-themes/SKILL.md)
