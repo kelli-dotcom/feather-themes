@@ -9,7 +9,7 @@
  */
 
 export const COGNITIVE_STATES = [
-  { id: "calm", label: "Calm", wavelengthNm: "440-475 nm (low-chroma)", science: "Low-chroma cool blues & lavenders reduce visual agitation without harsh melanopsin glare", hues: [210, 218, 226, 234, 242, 250, 258, 266, 204, 198, 222, 238, 246, 254, 262, 270, 214, 230], bgSat: 22, accentSat: 58 },
+  { id: "calm", label: "Calm", wavelengthNm: "Low saturation + low brightness first", science: "Low-chroma, low-brightness cool tones calm first; hue is second, and blue near the 480 nm melanopsin peak alerts if bright, so calm is not a wavelength alone.", hues: [210, 218, 226, 234, 242, 250, 258, 266, 204, 198, 222, 238, 246, 254, 262, 270, 214, 230], bgSat: 22, accentSat: 58 },
   { id: "focus", label: "Focus", wavelengthNm: "490-540 nm", science: "Near the 555 nm human photopic peak — maximum visual acuity with minimal eye strain", hues: [160, 166, 172, 178, 184, 190, 196, 202, 154, 164, 170, 176, 182, 188, 194, 200, 206, 168], bgSat: 18, accentSat: 66 },
   { id: "energy", label: "Energy", wavelengthNm: "585-625 nm", science: "Warm long-wave amber & coral tones stimulate alertness and creative warmth", hues: [12, 18, 24, 30, 36, 42, 48, 54, 8, 16, 22, 28, 34, 40, 46, 52, 58, 20], bgSat: 24, accentSat: 78 },
   { id: "romantic", label: "Romantic", wavelengthNm: "610-660 nm", science: "Long-wave rose, blush & plum wavelengths minimize blue-light stress and signal warmth", hues: [326, 332, 338, 344, 350, 356, 2, 8, 320, 328, 336, 342, 348, 354, 0, 6, 316, 340], bgSat: 26, accentSat: 62 },

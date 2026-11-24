@@ -74,7 +74,7 @@ Every generated theme combines **10 light-wavelength states × 18 harmonic base 
 
 | State | Wavelength Band | Human Photobiology Effect | Ideal Moment |
 | :--- | :---: | :--- | :--- |
-| **`calm`** | `440–475 nm` *(low-chroma)* | Reduces visual agitation without harsh glare | High-stress workflows (job search, finance) |
+| **`calm`** | Low saturation + low brightness first | Low-chroma, low-brightness cool tones calm first; hue is second, and blue near the 480 nm melanopsin peak alerts if bright, so calm is not a wavelength alone. | High-stress workflows (job search, finance) |
 | **`focus`** | `490–540 nm` | Near the `555 nm` human photopic peak for low eye strain | Deep coding, writing, analytics |
 | **`energy`** | `585–625 nm` | Warm amber & coral tones lift alertness & creativity | Sprint kickoffs, brainstorming |
 | **`romantic`** | `610–660 nm` | Long-wave rose & plum minimize blue-light stress | Warm editorial & personal spaces |
