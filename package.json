@@ -13,7 +13,8 @@
     "skills/",
     "README.md",
     "CHANGELOG.md",
-    "LICENSE"
+    "LICENSE",
+    "ui/"
   ],
   "bin": {
     "feather-themes": "./bin/feather-themes.mjs"
