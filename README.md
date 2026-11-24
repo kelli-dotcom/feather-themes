@@ -181,6 +181,7 @@ Read the full guide in **[`CONTRIBUTING.md`](CONTRIBUTING.md)** · **[Open an Is
 - `ui/icons.svg` — ten icons only, home, menu, close, search, arrow right, arrow left, check, link, mail, and star, each under 300 bytes, using currentColor only, so they flip with `data-theme`. Use it on its own.
 - `ui/animations.css` — cheap motion only, fade and rise, transform and opacity only, no flashing, and all motion stops when reduce motion is on. Use it on its own.
 - `ui/layout.css` — one grid, one spacing scale, 8, 16, 24, 32, and 48 only, with a wrap, a stack, a grid, a card, and a section. Use it on its own.
+- `ui/forms.css` — clear boxes to type in, labels above the box, 44px tall at least, with a clear focus outline. Use it on its own.
 
 ## 🌐 CRTA Tech Solutions Open-Source Ecosystem
 
