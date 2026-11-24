@@ -179,6 +179,7 @@ Read the full guide in **[`CONTRIBUTING.md`](CONTRIBUTING.md)** · **[Open an Is
 - `ui/buttons.css` — two buttons only, primary and secondary, using only the theme tokens, so they flip with `data-theme`. Use it on its own.
 - `ui/graphics.css` — light image rules, webp and the right size for the screen, borders from the theme tokens only. Use it on its own.
 - `ui/icons.svg` — ten icons only, home, menu, close, search, arrow right, arrow left, check, link, mail, and star, each under 300 bytes, using currentColor only, so they flip with `data-theme`. Use it on its own.
+- `ui/animations.css` — cheap motion only, fade and rise, transform and opacity only, no flashing, and all motion stops when reduce motion is on. Use it on its own.
 
 ## 🌐 CRTA Tech Solutions Open-Source Ecosystem
 
