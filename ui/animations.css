@@ -1,0 +1,56 @@
+/* Feather Animations — cheap motion only, feather light.
+   Use on its own, or with ui/fonts.css, ui/buttons.css,
+   ui/graphics.css, and ui/icons.svg.
+   Only transform and opacity, nothing else. Those two are
+   cheap for a phone to do, and they do not shake the page.
+   No flashing, no shaking, no spinning for fun. WCAG 2.3.1:
+   nothing flashes more than 3 times a second, and nothing
+   here flashes at all.
+   Source: feather-themes for tokens, feather-speed for
+   lightness, repoverse-master FEATHER_STANDARD.md for the
+   budgets. Plain words, from empathy-marketing-skills.
+
+   How to use: add .ft-fade-in to fade in once, .ft-rise
+   to rise a little and fade in once, .ft-fade-out to fade
+   out once. Add .ft-motion-slow for a slower fade, only
+   when a person is waiting for something to finish.
+   All motion stops when a person has reduce motion on. */
+
+.ft-fade-in {
+  animation: ft-fade-in 240ms ease-out both;
+}
+
+.ft-rise {
+  animation: ft-rise 240ms ease-out both;
+}
+
+.ft-fade-out {
+  animation: ft-fade-out 180ms ease-in both;
+}
+
+.ft-motion-slow {
+  animation-duration: 400ms;
+}
+
+@keyframes ft-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ft-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ft-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ft-fade-in,
+  .ft-rise,
+  .ft-fade-out {
+    animation: none;
+  }
+}
