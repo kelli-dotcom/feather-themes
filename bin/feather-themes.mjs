@@ -5,7 +5,11 @@
  * Usage:
  *   node bin/feather-themes.mjs list [--state=calm] [--mode=dark] [--limit=20]
  *   node bin/feather-themes.mjs apply <theme-id> [--format=css|json|tailwind] [--out=<file>]
+ *   node bin/feather-themes.mjs export <theme-id> [--format=css|json|tailwind|swift|kotlin|dart] [--out=<file>]
  *   node bin/feather-themes.mjs verify-all
+ *
+ * export is one theme only, never the whole kit. JSON export is the flat
+ * 7 tokens only (bg, surface, surfaceSolid, border, text, muted, accent).
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -58,6 +62,57 @@ const getFlag = (name, fallback = null) => {
 };
 
 const allThemes = loadAllThemes();
+
+// Native-shape helpers for `export`. All outputs are one theme only:
+// the flat 7 tokens, in the target language's own shape.
+function hexToArgb(hex) {
+  return "0xFF" + hex.replace("#", "").toUpperCase();
+}
+
+function hexToRgbComponents(hex) {
+  const clean = hex.replace("#", "");
+  const r = (parseInt(clean.slice(0, 2), 16) / 255).toFixed(3);
+  const g = (parseInt(clean.slice(2, 4), 16) / 255).toFixed(3);
+  const b = (parseInt(clean.slice(4, 6), 16) / 255).toFixed(3);
+  return `red: ${r}, green: ${g}, blue: ${b}`;
+}
+
+function toSwift(theme) {
+  const name = theme.id.replace(/(^|-)(\w)/g, (_, __, c) => c.toUpperCase());
+  const lines = Object.entries(theme.tokens).map(
+    ([key, hex]) => `    public static let ${key} = Color(${hexToRgbComponents(hex)})`
+  );
+  return `// Feather Themes — ${theme.id} (${theme.label})\n// SwiftUI. No helper needed: Color(red:green:blue:) is built in.\nimport SwiftUI\n\npublic enum Feather${name} {\n${lines.join("\n")}\n}\n`;
+}
+
+function toKotlin(theme) {
+  const name = theme.id.replace(/(^|-)(\w)/g, (_, __, c) => c.toUpperCase());
+  const lines = Object.entries(theme.tokens).map(
+    ([key, hex]) => `    val ${key} = Color(${hexToArgb(hex)})`
+  );
+  return `// Feather Themes — ${theme.id} (${theme.label})\n// Jetpack Compose. Import androidx.compose.ui.graphics.Color.\nimport androidx.compose.ui.graphics.Color\n\nobject Feather${name} {\n${lines.join("\n")}\n}\n`;
+}
+
+function toDart(theme) {
+  const name = theme.id.replace(/(^|-)(\w)/g, (_, __, c) => c.toUpperCase());
+  const lines = Object.entries(theme.tokens).map(
+    ([key, hex]) => `  static const ${key} = Color(${hexToArgb(hex)});`
+  );
+  return `// Feather Themes — ${theme.id} (${theme.label})\n// Flutter. Import package:flutter/material.dart for Color.\nimport 'package:flutter/material.dart';\n\nclass Feather${name} {\n${lines.join("\n")}\n}\n`;
+}
+
+function exportTheme(theme, format) {
+  if (format === "json") {
+    return JSON.stringify(theme.tokens, null, 2) + "\n";
+  }
+  if (format === "tailwind") {
+    return `// Add inside tailwind.config.ts -> theme.extend.colors\nexport const featherTheme = ${JSON.stringify(theme.tokens, null, 2)};\n`;
+  }
+  if (format === "swift") return toSwift(theme);
+  if (format === "kotlin") return toKotlin(theme);
+  if (format === "dart") return toDart(theme);
+  return `${toCssBlock(theme)}\n`;
+}
 
 if (cmd === "verify-all") {
   let passCount = 0;
@@ -137,8 +192,40 @@ if (cmd === "apply") {
   process.exit(0);
 }
 
+if (cmd === "export") {
+  const themeId = args[1];
+  const format = getFlag("format", "css");
+  const outPath = getFlag("out");
+  const formats = ["css", "json", "tailwind", "swift", "kotlin", "dart"];
+
+  if (!themeId) {
+    console.error("Usage: feather-themes export <theme-id> [--format=css|json|tailwind|swift|kotlin|dart] [--out=file]");
+    process.exit(2);
+  }
+  if (!formats.includes(format)) {
+    console.error(`Unknown format "${format}". Use one of: ${formats.join(", ")}.`);
+    process.exit(2);
+  }
+
+  const theme = allThemes.find((t) => t.id === themeId);
+  if (!theme) {
+    console.error(`Theme "${themeId}" not found. Run "feather-themes list" to browse ${allThemes.length} themes.`);
+    process.exit(1);
+  }
+
+  const output = exportTheme(theme, format);
+  if (outPath) {
+    writeFileSync(resolve(process.cwd(), outPath), output, "utf8");
+    console.log(`Exported "${theme.id}" (${format}) -> ${outPath} (${Buffer.byteLength(output, "utf8")} bytes)`);
+  } else {
+    console.log(output);
+  }
+  process.exit(0);
+}
+
 console.log(`Feather Themes v2.0 (${allThemes.length} WCAG-verified themes, 0 dependencies)
 Commands:
   feather-themes list [--state=calm|focus|energy|romantic|morning|midday|dusk|night|grounded|executive] [--mode=dark|light]
   feather-themes apply <theme-id> [--format=css|json|tailwind] [--out=./theme.css]
+  feather-themes export <theme-id> [--format=css|json|tailwind|swift|kotlin|dart] [--out=./theme.css]
   feather-themes verify-all`);
