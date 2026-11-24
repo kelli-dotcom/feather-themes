@@ -165,8 +165,8 @@ We welcome new photobiology wavelength palettes, zero-dependency framework expor
 # 1. Fork & create a feature branch
 git checkout -b feat/your-theme-or-exporter
 
-# 2. Build & verify 100% WCAG 2.1 AA/AAA contrast compliance (0 errors required)
-node bin/feather-themes.mjs build && node bin/feather-themes.mjs verify
+# 2. Verify 100% WCAG 2.1 AA/AAA contrast compliance (0 errors required)
+node bin/feather-themes.mjs verify-all
 ```
 
 Read the full guide in **[`CONTRIBUTING.md`](CONTRIBUTING.md)** · **[Open an Issue](https://github.com/kelli-dotcom/feather-themes/issues)** · **[Submit a Pull Request](https://github.com/kelli-dotcom/feather-themes/pulls)**

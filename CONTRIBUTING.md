@@ -11,18 +11,18 @@ Thank you for helping make **Feather Themes** the cleanest zero-dependency photo
 
 ## 2. Human & AI Agent Guardrails (`AGENTS.md` + `llms.txt`)
 - **Zero Dependencies (`0` npm packages):** Never add external runtime dependencies.
-- **100% WCAG 2.1 AA/AAA Contrast:** Every generated theme MUST pass the automated luminance and contrast verifier (`node bin/feather-themes.mjs verify`).
+- **100% WCAG 2.1 AA/AAA Contrast:** Every generated theme MUST pass the automated luminance and contrast verifier (`node bin/feather-themes.mjs verify-all`).
 - **Visible Files Only:** Never place agent specs, skills, or handoffs in hidden dot-files.
 - **Rule of 2:** If contrast verification fails twice on a palette change, document the contrast delta in your PR rather than weakening the WCAG threshold.
 
 ## 3. 60-Second Verification Gate (Required Before Every PR)
 ```bash
-node bin/feather-themes.mjs build && node bin/feather-themes.mjs verify
+node bin/feather-themes.mjs verify-all
 ```
 
 ## 4. 3-Step Pull Request Workflow
 1. **Fork & Branch:** `git checkout -b feat/your-theme-or-fix`
-2. **Verify Locally:** Run `node bin/feather-themes.mjs build && node bin/feather-themes.mjs verify` and confirm `0` contrast failures.
+2. **Verify Locally:** Run `node bin/feather-themes.mjs verify-all` and confirm `0` contrast failures.
 3. **Submit a Pull Request:** Open a PR against `main` with your verification output and a screenshot or swatch summary. *(Mobile contributors can also edit docs or `skills/lightweight-themes/SKILL.md` directly in the GitHub web/mobile UI.)*
 
 ## 5. IP Safety & MIT License
