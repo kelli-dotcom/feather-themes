@@ -1,0 +1,48 @@
+/* Feather Fonts — one font system, feather light.
+   Use on its own, or with ui/buttons.css. No colours here,
+   only type. Colours come from the theme tokens in
+   themes/themes.css, so this file flips with data-theme.
+   Source: feather-themes for tokens, feather-speed for
+   lightness, repoverse-master FEATHER_STANDARD.md for the
+   budgets. Plain words, from empathy-marketing-skills.
+   This file downloads nothing. Headings are Lora and body
+   is Source Sans 3, Kelli's pairing on kelli-dotcom.github.io,
+   with system fallbacks. If Lora or Source Sans 3 is not
+   installed, the system font is used instead. To load them,
+   add one link, with only the weights already used on her
+   site, Lora 500 and 600, Source Sans 3 400, 500, 600 and 700,
+   with font-display swap:
+   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"> */
+
+.ft-font-body,
+body {
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.ft-font-heading,
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.ft-font-heading-1,
+h1 { font-size: clamp(2rem, 5vw, 2.75rem); }
+
+.ft-font-heading-2,
+h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+
+.ft-font-heading-3,
+h3 { font-size: 1.25rem; }
+
+.ft-font-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.ft-font-strong {
+  font-weight: 700;
+}
