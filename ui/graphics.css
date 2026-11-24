@@ -1,0 +1,45 @@
+/* Feather Graphics — light image rules, feather light.
+   Use on its own, or with ui/fonts.css and ui/buttons.css.
+   Colours come only from the theme tokens in themes/themes.css,
+   so images flip with data-theme and with auto time mode,
+   with no extra code. No new colours, no hardcoded colours.
+   Source: feather-themes for tokens, feather-speed for
+   lightness, repoverse-master FEATHER_STANDARD.md for the
+   budgets. Plain words, from empathy-marketing-skills.
+
+   Photos: use webp, the right size for the screen, never
+   a huge file shrunk down. A photo on a phone should be
+   no wider than the phone screen. A photo on a computer
+   should be no wider than the space it sits in.
+   No background image that downloads for every visitor.
+   If a picture is only decoration, give it empty alt text.
+   If a picture carries meaning, describe it in alt text. */
+
+.ft-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--ft-border);
+  background: var(--ft-surface-solid);
+}
+
+.ft-img-round {
+  border-radius: 50%;
+}
+
+.ft-img-flat {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.ft-figure {
+  margin: 0;
+}
+
+.ft-figure figcaption {
+  color: var(--ft-muted);
+  font-size: 0.88rem;
+  margin-top: 8px;
+}
