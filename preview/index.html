@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="../ui/fonts.css" />
   <link rel="stylesheet" href="../ui/buttons.css" />
   <link rel="stylesheet" href="../ui/layout.css" />
+  <link rel="stylesheet" href="../ui/forms.css" />
+  <link rel="stylesheet" href="../ui/navigation.css" />
+  <link rel="stylesheet" href="../ui/animations.css" />
+  <link rel="stylesheet" href="../ui/graphics.css" />
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--ft-bg); color: var(--ft-text); }
@@ -31,6 +35,42 @@
         <button id="autoBtn" class="ft-btn" type="button">Auto Time</button>
         <a class="ft-btn-secondary" href="https://github.com/kelli-dotcom/feather-themes" target="_blank" rel="noopener">GitHub Repo</a>
       </div>
+    </section>
+
+
+    <section class="ft-card ft-rise" aria-label="What it looks like">
+      <h2 style="margin:0 0 4px;">What it looks like</h2>
+      <p class="muted" style="margin:0 0 16px;">Text, buttons, icons, a form box, and a menu, all in this theme.</p>
+      <h3 style="margin:0 0 4px;">Heading text</h3>
+      <p style="margin:0 0 16px;">Body text. This is how words look in this theme, in Lora headings and Source Sans 3 body.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+        <button class="ft-btn" type="button">Main button</button>
+        <button class="ft-btn-secondary" type="button">Second button</button>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px;" aria-label="Icons">
+        <svg width="24" height="24" aria-hidden="true"><use href="../ui/icons.svg#ft-home"/></svg>
+        <svg width="24" height="24" aria-hidden="true"><use href="../ui/icons.svg#ft-menu"/></svg>
+        <svg width="24" height="24" aria-hidden="true"><use href="../ui/icons.svg#ft-close"/></svg>
+        <svg width="24" height="24" aria-hidden="true"><use href="../ui/icons.svg#ft-search"/></svg>
+        <svg width="24" height="24" aria-hidden="true"><use href="../ui/icons.svg#ft-arrow-right"/></svg>
+        <svg width="24" height="24" aria-hidden="true"><use href="../ui/icons.svg#ft-arrow-left"/></svg>
+        <svg width="24" height="24" aria-hidden="true"><use href="../ui/icons.svg#ft-check"/></svg>
+        <svg width="24" height="24" aria-hidden="true"><use href="../ui/icons.svg#ft-link"/></svg>
+        <svg width="24" height="24" aria-hidden="true"><use href="../ui/icons.svg#ft-mail"/></svg>
+        <svg width="24" height="24" aria-hidden="true"><use href="../ui/icons.svg#ft-star"/></svg>
+      </div>
+      <div class="ft-field" style="margin-bottom:16px;">
+        <label class="ft-label" for="demoName">Your name</label>
+        <input class="ft-input" id="demoName" type="text" placeholder="Type here" />
+        <span class="ft-hint muted">This is a form box.</span>
+      </div>
+      <nav class="ft-nav" aria-label="Menu">
+        <ul class="ft-nav-list">
+          <li><a class="ft-nav-link ft-nav-current" href="#">Home</a></li>
+          <li><a class="ft-nav-link" href="#">Themes</a></li>
+          <li><a class="ft-nav-link" href="#">GitHub Repo</a></li>
+        </ul>
+      </nav>
     </section>
 
     <section class="ft-card" aria-label="Copy this theme">
