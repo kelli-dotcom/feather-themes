@@ -4,6 +4,29 @@ All updates are opt-in. Nothing updates on its own. A dev reads this file
 first, then chooses whether to update, and stays on the old version for
 as long as they want.
 
+## 2.0.2 — 2026-11-25
+
+What changed in this release:
+
+- Duplicate colour sets fixed: 8 pairs of generated themes shared a
+  colour set (morning and dusk light-crisp themes at the same hue).
+  The 8 colliding dusk hues were nudged by 1 degree, so all 1,092
+  themes now have a unique colour set (was 1,084). 48 dusk themes
+  change colour slightly; no theme id was removed or renamed, and
+  all 1,080 generated themes still pass AA text, AAA text, and
+  AA muted (worst text 8.82, worst muted 5.43). Engine change only,
+  commit c818fd6.
+- Versions synced: `themes/tokens.json` is now 2.0.2, matching
+  `package.json` 2.0.2.
+
+What breaks in 2.0.2:
+
+- Nothing breaking. No theme id was removed or renamed. The `apply`
+  command works exactly as it did before. The 48 dusk themes that
+  change colour keep the same ids and labels — the colours shift by
+  one degree of hue, so a dev using one of those dusk themes will see
+  a slightly different shade.
+
 ## 2.0.1 — 2026-11-25
 
 What changed in this release:
