@@ -4,6 +4,29 @@ All updates are opt-in. Nothing updates on its own. A dev reads this file
 first, then chooses whether to update, and stays on the old version for
 as long as they want.
 
+## 2.0.1 — 2026-11-25
+
+What changed in this release:
+
+- Engine shrunk: `src/engine.mjs` went from 7,963 bytes to 6,089 bytes,
+  under the 6 KB budget (commit 210a0390). The three near-duplicate
+  light/dim/dark branches are now one lookup table, and the science and
+  wavelength wording is shorter. No token, colour, theme id, or theme
+  output changed — every one of the 1,080 generated themes matches the
+  old engine exactly.
+- Preview wording brought in line: the nine hardcoded flagship wavelength
+  lines in `preview/index.html` now match the engine's shorter wording
+  exactly. The flagship descriptions and the state dropdown already read
+  the engine live, so they show the shorter text too. Same meaning,
+  fewer words. No colours changed.
+- Versions synced: `themes/tokens.json` is now 2.0.1, matching
+  `package.json` 2.0.1.
+
+What breaks in 2.0.1:
+
+- Nothing breaking. No theme id was removed or renamed. No token colour
+  changed. The `apply` command works exactly as it did before.
+
 ## 2.0.0 — 2026-11-24
 
 What changed in this release:
