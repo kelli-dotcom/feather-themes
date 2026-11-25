@@ -1,3 +1,5 @@
+[![Feather Themes — Approved Scientific Photobiology Color Engine](assets/hero-banner.svg)](https://kelli-dotcom.github.io/feather-themes/preview/)
+
 # Feather Themes
 
 Come in. Everything here has its place, and nothing is missing.
@@ -9,7 +11,7 @@ Come in. Everything here has its place, and nothing is missing.
 - `bin/feather-themes.mjs` — list, apply, and verify themes from one command.
 - `ui/` — fonts, buttons, graphics, icons, animations, layout, forms, navigation, each usable on its own.
 - `skills/lightweight-themes/` — the agent skill for theming any app.
-- `preview/index.html` — offline theme explorer, open it in a browser.
+- [Live Use-Case Studio](https://kelli-dotcom.github.io/feather-themes/preview/) (`preview/index.html`) — interactive scientific theme explorer, live on the web or offline.
 
 Use it: `node bin/feather-themes.mjs apply morning-rose --format=css --out=./theme.css`
 
