@@ -4,7 +4,6 @@
       <path d="M256,16 C330,110 372,210 356,320 C342,410 300,452 256,462 C212,452 170,410 156,320 C140,210 182,110 256,16 Z"/>
     </clipPath>
   </defs>
-  <rect width="512" height="560" fill="#f5f2eb"/>
   <!-- Feather vane: 12 clear stripes, one per flagship theme, top to bottom.
        Top is morning light, bottom is night dark. That is what the kit does:
        one feather, light, that changes theme with the time of day. -->

@@ -7,24 +7,23 @@
   <link rel="stylesheet" href="../themes/themes.css" />
   <link rel="stylesheet" href="../ui/fonts.css" />
   <link rel="stylesheet" href="../ui/buttons.css" />
+  <link rel="stylesheet" href="../ui/layout.css" />
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--ft-bg); color: var(--ft-text); }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 28px 20px 56px; }
     .muted { color: var(--ft-muted); }
     .logo { width: 72px; height: auto; display: block; }
     select { min-height: 44px; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--ft-border); background: var(--ft-bg); color: var(--ft-text); font-family: inherit; font-size: 1rem; width: 100%; }
-    .box { margin: 18px 0; padding: 16px; border: 1px solid var(--ft-border); background: var(--ft-surface-solid); border-radius: 12px; }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="ft-wrap" style="max-width:720px;padding:28px 0 56px;">
     <header>
       <img class="logo" src="../assets/feather-themes-logo.svg" alt="Feather Themes logo" width="72" height="79" />
       <p style="margin:14px 0 0;">1,092 themes that change with the time of day.</p>
     </header>
 
-    <section class="box" aria-label="Pick a theme">
+    <section class="ft-card" aria-label="Pick a theme">
       <label for="flagshipSel" style="display:block;margin-bottom:8px;">Pick a theme</label>
       <select id="flagshipSel" aria-label="Pick a theme"></select>
       <p id="activePurpose" style="margin:12px 0 0;"></p>
@@ -34,7 +33,7 @@
       </div>
     </section>
 
-    <section class="box" aria-label="Copy this theme">
+    <section class="ft-card" aria-label="Copy this theme">
       <button id="copyCss" class="ft-btn" type="button">Copy this theme</button>
       <p class="muted" style="margin:10px 0 0;">This copies the colours for this theme. Paste them into your site and it will look like this.</p>
       <p id="copyStatus" class="muted" style="margin:8px 0 0;"></p>
