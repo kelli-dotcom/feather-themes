@@ -1,6 +1,6 @@
 {
   "name": "feather-themes",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "1,092 scientifically calibrated, zero-dependency, WCAG-AA verified themes (10 cognitive/emotional states) + matching UI kit (fonts, buttons, graphics, icons, animations, layout, forms, navigation) + CLI & AI agent skill for web and mobile apps. Used in Openflex.",
   "type": "module",
   "main": "src/engine.mjs",
