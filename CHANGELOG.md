@@ -4,6 +4,26 @@ All updates are opt-in. Nothing updates on its own. A dev reads this file
 first, then chooses whether to update, and stays on the old version for
 as long as they want.
 
+## 2.0.3 — 2026-11-25
+
+What changed in this release:
+
+- Explorer now lists all 12 flagships: tokyo-night, catppuccin and
+  dracula were missing from the picker in `preview/index.html`
+  (sandstone was already there). Added the three with tokens copied
+  exactly from `themes/tokens.json` and states assigned
+  (tokyo-night -> night, catppuccin -> calm, dracula -> focus).
+  All 12 flagships pass AA text, AAA text, and AA muted. No theme,
+  token, or engine file changed.
+- Versions synced: `themes/tokens.json` is now 2.0.3, matching
+  `package.json` 2.0.3.
+
+What breaks in 2.0.3:
+
+- Nothing breaking. No theme id was removed or renamed. The `apply`
+  command works exactly as it did before. The explorer simply shows
+  three more flagships in its picker.
+
 ## 2.0.2 — 2026-11-25
 
 What changed in this release:
