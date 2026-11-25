@@ -1,55 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 300" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%">
   <!-- Canvas uses strictly approved Calm Lavender tokens (#161524, #211f36, #3a375c, #eceaf9, #b4afd8, #a78bfa) -->
-  <rect width="1080" height="300" rx="14" fill="#161524" stroke="#3a375c" stroke-width="2"/>
-  <rect x="18" y="18" width="1044" height="264" rx="10" fill="#211f36" stroke="#3a375c" stroke-width="1.2"/>
+  <rect width="1200" height="300" rx="14" fill="#161524" stroke="#3a375c" stroke-width="2"/>
+  <rect x="18" y="18" width="1164" height="264" rx="10" fill="#211f36" stroke="#3a375c" stroke-width="1.2"/>
 
-  <!-- Left Scientific Title Block (Lora / Georgia heading + Source Sans 3 body) -->
-  <text x="52" y="64" fill="#a78bfa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700" letter-spacing="2">🟣 FEATHER-THEMES // APPROVED PHOTOBIOLOGY ENGINE · ~300B/THEME</text>
+  <!-- Left block: title, description, real .ft-btn buttons, source line. Text kept inside x=52..650 so it never reaches the right panel. -->
+  <text x="52" y="64" fill="#a78bfa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700" letter-spacing="2">FEATHER-THEMES // APPROVED PHOTOBIOLOGY ENGINE</text>
   <text x="52" y="114" fill="#eceaf9" font-family="Lora, Georgia, serif" font-size="40" font-weight="600">Feather Themes</text>
-  <text x="52" y="148" fill="#b4afd8" font-family="'Source Sans 3', system-ui, -apple-system, sans-serif" font-size="15.5">1,092 WCAG 2.1 AA/AAA verified themes across 10 scientific states — every palette</text>
-  <text x="52" y="170" fill="#b4afd8" font-family="'Source Sans 3', system-ui, -apple-system, sans-serif" font-size="15.5">calibrated to a specific optical frequency, luminance rule, and human purpose.</text>
+  <text x="52" y="148" fill="#b4afd8" font-family="'Source Sans 3', system-ui, -apple-system, sans-serif" font-size="15.5">1,092 WCAG 2.1 AA/AAA verified themes across 10 states.</text>
+  <text x="52" y="170" fill="#b4afd8" font-family="'Source Sans 3', system-ui, -apple-system, sans-serif" font-size="15.5">Every palette calibrated to a frequency, a luminance rule,</text>
+  <text x="52" y="192" fill="#b4afd8" font-family="'Source Sans 3', system-ui, -apple-system, sans-serif" font-size="15.5">and a human purpose.</text>
 
-  <!-- Approved Button Style Preview (.ft-btn border accent, never accent-filled) -->
+  <!-- Real .ft-btn style: border accent, never accent-filled. These are the actual buttons from ui/buttons.css. -->
   <g font-family="'Source Sans 3', system-ui, sans-serif" font-size="12.5" font-weight="600">
-    <rect x="52" y="196" width="154" height="38" rx="8" fill="#211f36" stroke="#a78bfa" stroke-width="2"/>
-    <text x="129" y="219" fill="#eceaf9" text-anchor="middle">0 Dependencies</text>
+    <rect x="52" y="212" width="154" height="38" rx="8" fill="#211f36" stroke="#a78bfa" stroke-width="2"/>
+    <text x="129" y="235" fill="#eceaf9" text-anchor="middle">0 Dependencies</text>
 
-    <rect x="218" y="196" width="176" height="38" rx="8" fill="#161524" stroke="#3a375c" stroke-width="1.2"/>
-    <text x="306" y="219" fill="#eceaf9" text-anchor="middle">Auto Time · 5 Windows</text>
+    <rect x="218" y="212" width="176" height="38" rx="8" fill="#161524" stroke="#3a375c" stroke-width="1.2"/>
+    <text x="306" y="235" fill="#eceaf9" text-anchor="middle">Auto Time · 5 Windows</text>
 
-    <rect x="406" y="196" width="154" height="38" rx="8" fill="#161524" stroke="#3a375c" stroke-width="1.2"/>
-    <text x="483" y="219" fill="#eceaf9" text-anchor="middle">Lora + Source Sans 3</text>
+    <rect x="406" y="212" width="154" height="38" rx="8" fill="#161524" stroke="#3a375c" stroke-width="1.2"/>
+    <text x="483" y="235" fill="#eceaf9" text-anchor="middle">Lora + Source Sans 3</text>
   </g>
-  <text x="52" y="262" fill="#b4afd8" font-family="ui-monospace, monospace" font-size="11">All colours shown strictly from themes/tokens.json · 0 invented hex values · WCAG AA/AAA verified</text>
+  <text x="52" y="274" fill="#b4afd8" font-family="ui-monospace, monospace" font-size="11">All colours from themes/tokens.json · 0 invented hex values · WCAG AA/AAA</text>
 
-  <!-- Right Panel: 5 Approved Scientific Color Combinations + Frequency & Purpose -->
-  <g transform="translate(612, 36)" font-family="'Source Sans 3', system-ui, sans-serif">
+  <!-- Right panel: 5 flagship themes, real tokens from themes/tokens.json. Each card is one theme as it ships. -->
+  <g transform="translate(660, 36)" font-family="'Source Sans 3', system-ui, sans-serif">
     <!-- Morning Rose (#fdf6f4 / #271b1d / #be5a74) -->
-    <rect x="0" y="0" width="424" height="40" rx="7" fill="#fdf6f4" stroke="#e7d4cf" stroke-width="1.5"/>
+    <rect x="0" y="0" width="480" height="40" rx="7" fill="#fdf6f4" stroke="#e7d4cf" stroke-width="1.5"/>
     <rect x="10" y="9" width="22" height="22" rx="4" fill="#be5a74"/>
     <text x="42" y="19" fill="#271b1d" font-size="12.5" font-weight="700">Morning Rose · 570–620 nm (high-L · 05–11h)</text>
     <text x="42" y="33" fill="#6e565b" font-size="10.5">Warm sunrise wake-up without harsh glare</text>
 
     <!-- Midday Sunlit (#fcfaf2 / #1c1917 / #0f766e) -->
-    <rect x="0" y="48" width="424" height="40" rx="7" fill="#fcfaf2" stroke="#e5dec9" stroke-width="1.5"/>
+    <rect x="0" y="48" width="480" height="40" rx="7" fill="#fcfaf2" stroke="#e5dec9" stroke-width="1.5"/>
     <rect x="10" y="57" width="22" height="22" rx="4" fill="#0f766e"/>
     <text x="42" y="67" fill="#1c1917" font-size="12.5" font-weight="700">Midday Sunlit · 475–520 nm (480 nm peak · 11–14h)</text>
     <text x="42" y="81" fill="#57534e" font-size="10.5">Bright-room focus &amp; school Chromebook clarity</text>
 
-    <!-- Forest Grounded (#08120e / #e6f4ee / #34d399) -->
-    <rect x="0" y="96" width="424" height="40" rx="7" fill="#08120e" stroke="#1e3a2f" stroke-width="1.5"/>
+    <!-- Forest (#08120e / #e6f4ee / #34d399) -->
+    <rect x="0" y="96" width="480" height="40" rx="7" fill="#08120e" stroke="#1e3a2f" stroke-width="1.5"/>
     <rect x="10" y="105" width="22" height="22" rx="4" fill="#34d399"/>
     <text x="42" y="115" fill="#e6f4ee" font-size="12.5" font-weight="700">Forest · 520–565 nm (555 nm photopic peak)</text>
     <text x="42" y="129" fill="#86b3a0" font-size="10.5">Biophilic green for long-form reading &amp; calm focus</text>
 
-    <!-- Golden Hour Dusk (#1c1317 / #f7ebe8 / #e5989b) -->
-    <rect x="0" y="144" width="424" height="40" rx="7" fill="#1c1317" stroke="#4a333d" stroke-width="1.5"/>
+    <!-- Golden Hour (#1c1317 / #f7ebe8 / #e5989b) -->
+    <rect x="0" y="144" width="480" height="40" rx="7" fill="#1c1317" stroke="#4a333d" stroke-width="1.5"/>
     <rect x="10" y="153" width="22" height="22" rx="4" fill="#e5989b"/>
     <text x="42" y="163" fill="#f7ebe8" font-size="12.5" font-weight="700">Golden Hour · 595–650 nm (low-blue · 17–21h)</text>
     <text x="42" y="177" fill="#d6b2ba" font-size="10.5">Evening wind-down avoiding 480 nm blue spikes</text>
 
-    <!-- Obsidian Night (#09090b / #f4f4f5 / #10b981) -->
-    <rect x="0" y="192" width="424" height="40" rx="7" fill="#09090b" stroke="#27272a" stroke-width="1.5"/>
+    <!-- Obsidian (#09090b / #f4f4f5 / #10b981) -->
+    <rect x="0" y="192" width="480" height="40" rx="7" fill="#09090b" stroke="#27272a" stroke-width="1.5"/>
     <rect x="10" y="201" width="22" height="22" rx="4" fill="#10b981"/>
     <text x="42" y="211" fill="#f4f4f5" font-size="12.5" font-weight="700">Obsidian · &lt;10% Luminance (scotopic · 21–05h)</text>
     <text x="42" y="225" fill="#a1a1aa" font-size="10.5">Zero-glare late-night coding &amp; reduced eye fatigue</text>
