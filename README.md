@@ -133,6 +133,26 @@ localStorage.setItem("app-theme", "morning-rose");
 
 ---
 
+## 📁 What's inside
+
+```text
+feather-themes/
+├── themes/            # themes.css + tokens.json — the 1,092 themes
+├── src/               # engine.mjs — builds the 1,080 generated themes
+├── ui/                # fonts, buttons, graphics, icons, animations, layout, forms, navigation
+├── bin/               # feather-themes.mjs CLI
+├── skills/            # lightweight-themes agent skill
+├── switcher/          # feather-switcher.js — one-line theme switching
+├── auto/              # feather-auto-time.js — Sandstone by day, Forest after 9pm
+├── preview/           # index.html — offline theme explorer
+├── design-spec/       # THEME_SPEC.md
+├── schemas/           # handoff schema
+├── scripts/           # validate-handoff.mjs
+├── assets/            # demo.gif
+└── README.md · CONTRIBUTING.md · AGENTS.md · HANDOFF.md · CHANGELOG.md · LICENSE · llms.txt · mistakes.md · package.json
+```
+
+---
 ## 📦 Install & Updates (Opt-In)
 
 Install one pinned version. Nothing updates on its own.
@@ -140,6 +160,8 @@ Install one pinned version. Nothing updates on its own.
 ```bash
 npm install feather-themes@2.0.0
 ```
+
+Not on npm yet. Clone the repo and use it straight from the files until it is published.
 
 To get an update, read `CHANGELOG.md` first, then update only if you want it:
 
