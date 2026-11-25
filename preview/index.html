@@ -3,165 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feather Themes — Scientific Photobiology Use-Case Studio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Feather Themes</title>
   <link rel="stylesheet" href="../themes/themes.css" />
   <link rel="stylesheet" href="../ui/fonts.css" />
   <link rel="stylesheet" href="../ui/buttons.css" />
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--ft-bg); color: var(--ft-text); }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 28px 20px 56px; }
-    .topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 16px; border-bottom: 1px solid var(--ft-border); padding-bottom: 18px; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 28px 20px 56px; }
     .muted { color: var(--ft-muted); }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.82rem; }
-    .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 18px 0; padding: 14px 16px; border: 1px solid var(--ft-border); background: var(--ft-surface-solid); border-radius: 12px; }
-    select { min-height: 44px; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--ft-border); background: var(--ft-bg); color: var(--ft-text); font-family: inherit; font-size: 0.95rem; }
-    .science-bar { padding: 16px 18px; border-radius: 12px; border: 2px solid var(--ft-accent); background: var(--ft-surface-solid); margin-bottom: 20px; }
-    .science-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 10px; }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .use-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 20px 0; }
-    .card { padding: 18px; border-radius: 12px; border: 1px solid var(--ft-border); background: var(--ft-surface-solid); display: flex; flex-direction: column; gap: 10px; }
-    .row { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--ft-border); font-size: 0.92rem; }
-    .catalog { display: grid; grid-template-columns: repeat(auto-fill, minmax(235px, 1fr)); gap: 12px; margin-top: 14px; }
-    .swatch-card { padding: 14px; border-radius: 10px; border: 1px solid var(--ft-border); cursor: pointer; text-align: left; font-family: inherit; }
-    .dots { display: flex; gap: 6px; margin-top: 8px; }
-    .dot { width: 20px; height: 20px; border-radius: 4px; border: 1px solid rgba(128,128,128,0.35); }
-    pre { margin: 0; padding: 14px; border-radius: 10px; border: 1px solid var(--ft-border); background: var(--ft-bg); color: var(--ft-text); overflow-x: auto; font-size: 0.82rem; }
+    .logo { width: 72px; height: auto; display: block; }
+    select { min-height: 44px; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--ft-border); background: var(--ft-bg); color: var(--ft-text); font-family: inherit; font-size: 1rem; width: 100%; }
+    .box { margin: 18px 0; padding: 16px; border: 1px solid var(--ft-border); background: var(--ft-surface-solid); border-radius: 12px; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header class="topbar">
-      <div>
-        <div class="mono" style="color:var(--ft-accent);font-weight:700;">FEATHER THEMES v2.0 · APPROVED SCIENTIFIC PHOTOBIOLOGY STUDIO</div>
-        <h1 style="margin:4px 0 6px;">Real-World Use Cases in Approved Scientific Palettes</h1>
-        <p class="muted" style="margin:0;">Zero dependencies · Lora + Source Sans 3 (`ui/fonts.css`) · WCAG AA buttons (`ui/buttons.css`) · Every theme carries an optical frequency &amp; human purpose.</p>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <button id="autoBtn" class="ft-btn" type="button">Auto Time (Device Clock)</button>
-        <a class="ft-btn-secondary" href="https://github.com/kelli-dotcom/feather-themes" target="_blank" rel="noopener">GitHub Repo ↗</a>
-      </div>
+    <header>
+      <img class="logo" src="../assets/feather-themes-logo.svg" alt="Feather Themes logo" width="72" height="79" />
+      <p style="margin:14px 0 0;">1,092 themes that change with the time of day.</p>
     </header>
 
-    <section class="controls" aria-label="Scientific palette filters">
-      <select id="flagshipSel" aria-label="Approved scientific flagship themes"></select>
-      <select id="stateSel" aria-label="Filter 1,080 scientific themes by state"></select>
-      <select id="modeSel" aria-label="Filter by luminance mode">
-        <option value="all">All Luminance Modes (Dark / Dim / Light)</option>
-        <option value="dark">Dark</option>
-        <option value="dim">Dim</option>
-        <option value="light">Light</option>
-      </select>
-      <button id="copyCss" class="ft-btn" type="button">Copy 1-Theme CSS</button>
-      <button id="copyJson" class="ft-btn-secondary" type="button">Copy 7-Token JSON</button>
-    </section>
-
-    <section class="science-bar" aria-live="polite">
-      <div class="mono" id="activeId" style="color:var(--ft-accent);font-weight:700;"></div>
-      <h2 id="activeLabel" style="margin:4px 0 6px;font-size:1.35rem;"></h2>
-      <div class="science-grid">
-        <div><div class="mono muted">FREQUENCY / OPTICAL RULE</div><div id="activeFreq" style="font-weight:700;"></div></div>
-        <div><div class="mono muted">SPECIFIC PURPOSE</div><div id="activePurpose" style="font-weight:600;"></div></div>
-        <div><div class="mono muted">WCAG 2.1 AUDIT</div><div id="activeWcag" class="mono" style="font-weight:700;"></div></div>
+    <section class="box" aria-label="Pick a theme">
+      <label for="flagshipSel" style="display:block;margin-bottom:8px;">Pick a theme</label>
+      <select id="flagshipSel" aria-label="Pick a theme"></select>
+      <p id="activePurpose" style="margin:12px 0 0;"></p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+        <button id="autoBtn" class="ft-btn" type="button">Auto Time</button>
+        <a class="ft-btn-secondary" href="https://github.com/kelli-dotcom/feather-themes" target="_blank" rel="noopener">GitHub Repo</a>
       </div>
-      <p id="activeScience" class="muted ft-font-small" style="margin:10px 0 0;"></p>
     </section>
 
-    <!-- 3 Real-World App Use Cases Flipping Live -->
-    <section class="use-grid" aria-label="Real-world UI use cases">
-      <article class="card">
-        <div class="mono" style="color:var(--ft-accent);">USE CASE 01 · SCHOOL CHROMEBOOK READING</div>
-        <h3 style="margin:0;">Why Low-Chroma Light Reduces Eye Strain</h3>
-        <p class="muted" style="margin:0;">Students reading on 4 GB Chromebooks need crisp typography without harsh glare. `ui/fonts.css` pairs Lora headings with Source Sans 3 body at 16px and downloads zero bytes until opted in.</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;">
-          <button class="ft-btn" type="button" onclick="window.__pickFlagship('midday-sunlit')">Try Midday (475–520 nm)</button>
-          <button class="ft-btn-secondary" type="button" onclick="window.__pickFlagship('sandstone')">Try Afternoon Dip</button>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="mono" style="color:var(--ft-accent);">USE CASE 02 · HIGH-STRESS JOB / BUDGET APP</div>
-        <h3 style="margin:0;">Calm Decision Dashboard</h3>
-        <div class="row"><span>Verified Openings</span><strong class="mono">2,950</strong></div>
-        <div class="row"><span>Disguised Hybrids Blocked</span><strong class="mono">201</strong></div>
-        <div class="row" style="border-bottom:none;"><span>Theme Switch Overhead</span><strong class="mono">&lt; 1 ms (0 KB JS)</strong></div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;">
-          <button class="ft-btn" type="button" onclick="window.__pickFlagship('calm-lavender')">Try Calm Lavender</button>
-          <button class="ft-btn-secondary" type="button" onclick="window.__pickFlagship('paper-light')">Try Executive Paper</button>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="mono" style="color:var(--ft-accent);">USE CASE 03 · EVENING &amp; LATE-NIGHT OPS</div>
-        <h3 style="margin:0;">Melatonin-Safe Shift Checklist</h3>
-        <p class="muted" style="margin:0;">`auto/feather-auto-time.js` shifts automatically at 17:00 (`golden-hour`, 595–650 nm low-blue) and 21:00 (`obsidian`, &lt;10% luminance) — with manual pick always winning.</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;">
-          <button class="ft-btn" type="button" onclick="window.__pickFlagship('golden-hour')">Try Golden Hour Dusk</button>
-          <button class="ft-btn-secondary" type="button" onclick="window.__pickFlagship('obsidian')">Try Obsidian Night</button>
-        </div>
-      </article>
-    </section>
-
-    <section class="card" style="margin-bottom:22px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
-        <h3 style="margin:0;">Active 1-Theme Export (~300 Bytes · 7 Tokens)</h3>
-        <span id="copyStatus" class="mono muted">Click Copy 1-Theme CSS or Copy 7-Token JSON above</span>
-      </div>
-      <pre id="codeOut"></pre>
-    </section>
-
-    <section>
-      <h2 style="margin:0 0 4px;">Approved Scientific Catalog (1,080 Calibrated Palettes)</h2>
-      <p id="catalogCount" class="muted ft-font-small" style="margin:0;"></p>
-      <div id="grid" class="catalog"></div>
+    <section class="box" aria-label="Copy this theme">
+      <button id="copyCss" class="ft-btn" type="button">Copy this theme</button>
+      <p class="muted" style="margin:10px 0 0;">This copies the colours for this theme. Paste them into your site and it will look like this.</p>
+      <p id="copyStatus" class="muted" style="margin:8px 0 0;"></p>
     </section>
   </div>
 
   <script type="module">
-    import { COGNITIVE_STATES, generateAllScientificThemes, toCssBlock, contrastRatio } from "../src/engine.mjs";
+    import { COGNITIVE_STATES, toCssBlock } from "../src/engine.mjs";
     import { startAuto, stopAuto, FEATHER_MODE_KEY } from "../auto/feather-auto-time.js";
 
     const SCIENTIFIC_FLAGSHIPS = [
-      { id: "calm-lavender", label: "Calm Lavender (Serene)", state: "calm", wavelengthNm: "Low sat, low light", purpose: "High-stress workflows (job search, finance, exam prep)", science: COGNITIVE_STATES[0].science, mode: "dark", tokens: { bg: "#161524", surface: "#211f36", surfaceSolid: "#211f36", border: "#3a375c", text: "#eceaf9", muted: "#b4afd8", accent: "#a78bfa" } },
-      { id: "morning-rose", label: "Morning Rose (05:00–11:00 Auto)", state: "morning", wavelengthNm: "570-620 nm", purpose: "Gentle morning wake-up without harsh white glare", science: COGNITIVE_STATES[4].science, mode: "light", tokens: { bg: "#fdf6f4", surface: "#fffbfa", surfaceSolid: "#fffbfa", border: "#e7d4cf", text: "#271b1d", muted: "#6e565b", accent: "#be5a74" } },
-      { id: "midday-sunlit", label: "Midday Sunlit (11:00–14:00 Auto)", state: "midday", wavelengthNm: "475-520 nm", purpose: "Bright-room midday productivity & school Chromebooks", science: COGNITIVE_STATES[5].science, mode: "light", tokens: { bg: "#fcfaf2", surface: "#ffffff", surfaceSolid: "#ffffff", border: "#e5dec9", text: "#1c1917", muted: "#57534e", accent: "#0f766e" } },
-      { id: "sandstone", label: "Sandstone Light (14:00–17:00 Auto)", state: "grounded", wavelengthNm: "520-565 nm", purpose: "Afternoon-dip reading & calm sustained focus", science: COGNITIVE_STATES[8].science, mode: "light", tokens: { bg: "#f5f2eb", surface: "#fffdf9", surfaceSolid: "#fffdf9", border: "#d6cfc2", text: "#1c1917", muted: "#57534e", accent: "#047857" } },
-      { id: "forest", label: "Forest (Biophilic Grounded)", state: "grounded", wavelengthNm: "520-565 nm", purpose: "Long-form reading & mental restoration", science: COGNITIVE_STATES[8].science, mode: "dark", tokens: { bg: "#08120e", surface: "#0f1f18", surfaceSolid: "#0f1f18", border: "#1e3a2f", text: "#e6f4ee", muted: "#86b3a0", accent: "#34d399" } },
-      { id: "golden-hour", label: "Golden Hour (17:00–21:00 Auto)", state: "dusk", wavelengthNm: "595-650 nm", purpose: "Evening wind-down avoiding 480 nm melatonin suppression", science: COGNITIVE_STATES[6].science, mode: "dark", tokens: { bg: "#1c1317", surface: "#291c22", surfaceSolid: "#291c22", border: "#4a333d", text: "#f7ebe8", muted: "#d6b2ba", accent: "#e5989b" } },
-      { id: "obsidian", label: "Obsidian (21:00–05:00 Auto)", state: "night", wavelengthNm: "<10% luminance", purpose: "Late-night zero-glare coding & reduced retinal fatigue", science: COGNITIVE_STATES[7].science, mode: "dark", tokens: { bg: "#09090b", surface: "#18181b", surfaceSolid: "#18181b", border: "#27272a", text: "#f4f4f5", muted: "#a1a1aa", accent: "#10b981" } },
-      { id: "paper-light", label: "Paper Light (Executive Daylight)", state: "executive", wavelengthNm: "Achromatic + accent", purpose: "High-stakes operational, legal & financial dashboards", science: COGNITIVE_STATES[9].science, mode: "light", tokens: { bg: "#f8fafc", surface: "#ffffff", surfaceSolid: "#ffffff", border: "#cbd5e1", text: "#0f172a", muted: "#475569", accent: "#059669" } },
-      { id: "nord", label: "Nord (Executive Arctic)", state: "executive", wavelengthNm: "Achromatic + accent", purpose: "Low-cognitive-load technical & analytics consoles", science: COGNITIVE_STATES[9].science, mode: "dark", tokens: { bg: "#2e3440", surface: "#3b4252", surfaceSolid: "#3b4252", border: "#4c566a", text: "#eceff4", muted: "#d8dee9", accent: "#88c0d0" } },
-      { id: "tokyo-night", label: "Tokyo Night (Night Coding)", state: "night", wavelengthNm: "<10% luminance", purpose: "Late-night coding with a cool blue night palette", science: COGNITIVE_STATES[7].science, mode: "dark", tokens: { bg: "#1a1b26", surface: "#24283b", surfaceSolid: "#24283b", border: "#3b4261", text: "#c0caf5", muted: "#7aa2f7", accent: "#7dcfff" } },
-      { id: "catppuccin", label: "Catppuccin (Soft Pastel Dark)", state: "calm", wavelengthNm: "Low sat, low light", purpose: "Soft pastel dark theme for calm, low-strain reading and coding", science: COGNITIVE_STATES[0].science, mode: "dark", tokens: { bg: "#1e1e2e", surface: "#313244", surfaceSolid: "#313244", border: "#45475a", text: "#cdd6f4", muted: "#a6adc8", accent: "#a6e3a1" } },
-      { id: "dracula", label: "Dracula (Focus Coding)", state: "focus", wavelengthNm: "490-540 nm", purpose: "High-contrast dark coding with a vivid accent", science: COGNITIVE_STATES[1].science, mode: "dark", tokens: { bg: "#1e1f29", surface: "#282a36", surfaceSolid: "#282a36", border: "#44475a", text: "#f8f8f2", muted: "#bd93f9", accent: "#50fa7b" } },
+      { id: "calm-lavender", label: "Calm Lavender", purpose: "High-stress workflows (job search, finance, exam prep)", tokens: { bg: "#161524", surface: "#211f36", surfaceSolid: "#211f36", border: "#3a375c", text: "#eceaf9", muted: "#b4afd8", accent: "#a78bfa" } },
+      { id: "morning-rose", label: "Morning Rose", purpose: "Gentle morning wake-up without harsh white glare", tokens: { bg: "#fdf6f4", surface: "#fffbfa", surfaceSolid: "#fffbfa", border: "#e7d4cf", text: "#271b1d", muted: "#6e565b", accent: "#be5a74" } },
+      { id: "midday-sunlit", label: "Midday Sunlit", purpose: "Bright-room midday productivity and school Chromebooks", tokens: { bg: "#fcfaf2", surface: "#ffffff", surfaceSolid: "#ffffff", border: "#e5dec9", text: "#1c1917", muted: "#57534e", accent: "#0f766e" } },
+      { id: "sandstone", label: "Sandstone Light", purpose: "Afternoon-dip reading and calm sustained focus", tokens: { bg: "#f5f2eb", surface: "#fffdf9", surfaceSolid: "#fffdf9", border: "#d6cfc2", text: "#1c1917", muted: "#57534e", accent: "#047857" } },
+      { id: "forest", label: "Forest", purpose: "Long-form reading and mental restoration", tokens: { bg: "#08120e", surface: "#0f1f18", surfaceSolid: "#0f1f18", border: "#1e3a2f", text: "#e6f4ee", muted: "#86b3a0", accent: "#34d399" } },
+      { id: "golden-hour", label: "Golden Hour", purpose: "Evening wind-down", tokens: { bg: "#1c1317", surface: "#291c22", surfaceSolid: "#291c22", border: "#4a333d", text: "#f7ebe8", muted: "#d6b2ba", accent: "#e5989b" } },
+      { id: "obsidian", label: "Obsidian", purpose: "Late-night zero-glare coding", tokens: { bg: "#09090b", surface: "#18181b", surfaceSolid: "#18181b", border: "#27272a", text: "#f4f4f5", muted: "#a1a1aa", accent: "#10b981" } },
+      { id: "paper-light", label: "Paper Light", purpose: "High-stakes operational, legal and financial dashboards", tokens: { bg: "#f8fafc", surface: "#ffffff", surfaceSolid: "#ffffff", border: "#cbd5e1", text: "#0f172a", muted: "#475569", accent: "#059669" } },
+      { id: "nord", label: "Nord", purpose: "Low-cognitive-load technical and analytics consoles", tokens: { bg: "#2e3440", surface: "#3b4252", surfaceSolid: "#3b4252", border: "#4c566a", text: "#eceff4", muted: "#d8dee9", accent: "#88c0d0" } },
+      { id: "tokyo-night", label: "Tokyo Night", purpose: "Late-night coding with a cool blue night palette", tokens: { bg: "#1a1b26", surface: "#24283b", surfaceSolid: "#24283b", border: "#3b4261", text: "#c0caf5", muted: "#7aa2f7", accent: "#7dcfff" } },
+      { id: "catppuccin", label: "Catppuccin", purpose: "Soft pastel dark theme for calm, low-strain reading and coding", tokens: { bg: "#1e1e2e", surface: "#313244", surfaceSolid: "#313244", border: "#45475a", text: "#cdd6f4", muted: "#a6adc8", accent: "#a6e3a1" } },
+      { id: "dracula", label: "Dracula", purpose: "High-contrast dark coding with a vivid accent", tokens: { bg: "#1e1f29", surface: "#282a36", surfaceSolid: "#282a36", border: "#44475a", text: "#f8f8f2", muted: "#bd93f9", accent: "#50fa7b" } },
     ];
 
-    const PURPOSES = {
-      calm: "High-stress workflows (job search, finance, exam prep)",
-      focus: "Deep coding, writing & data analysis with minimal eye strain",
-      energy: "Creative sprints, brainstorming & morning momentum",
-      romantic: "Warm editorial & personal spaces with minimal blue light",
-      morning: "Gentle morning wake-up without harsh white glare",
-      midday: "Bright-room midday productivity & school Chromebooks",
-      dusk: "Evening wind-down avoiding 480 nm blue spikes",
-      night: "Late-night zero-glare coding & reduced retinal fatigue",
-      grounded: "Long-form reading & biophilic visual restoration",
-      executive: "High-stakes operational, legal & financial decision tools"
-    };
-
-    const generated = generateAllScientificThemes();
     const flagshipSel = document.getElementById("flagshipSel");
-    const stateSel = document.getElementById("stateSel");
-    const modeSel = document.getElementById("modeSel");
-    const grid = document.getElementById("grid");
     let active = SCIENTIFIC_FLAGSHIPS[0];
-
-    flagshipSel.innerHTML = SCIENTIFIC_FLAGSHIPS.map(f => `<option value="${f.id}">★ ${f.label}</option>`).join("");
-    stateSel.innerHTML = `<option value="all">All 10 Scientific States (${generated.length})</option>` +
-      COGNITIVE_STATES.map(s => `<option value="${s.id}">${s.label} — ${s.wavelengthNm}</option>`).join("");
+    flagshipSel.innerHTML = SCIENTIFIC_FLAGSHIPS.map(f => `<option value="${f.id}">${f.label}</option>`).join("");
 
     function applyTheme(t, isManual = true) {
       active = t;
@@ -178,16 +79,7 @@
       r.setProperty("--ft-text", t.tokens.text);
       r.setProperty("--ft-muted", t.tokens.muted);
       r.setProperty("--ft-accent", t.tokens.accent);
-
-      const tc = t.wcag ? t.wcag.textContrast : contrastRatio(t.tokens.text, t.tokens.surfaceSolid || t.tokens.surface);
-      const mc = t.wcag ? t.wcag.mutedContrast : contrastRatio(t.tokens.muted, t.tokens.surfaceSolid || t.tokens.surface);
-      document.getElementById("activeId").textContent = `ACTIVE THEME: ${t.id} (${t.mode.toUpperCase()})`;
-      document.getElementById("activeLabel").textContent = t.label;
-      document.getElementById("activeFreq").textContent = t.wavelengthNm;
-      document.getElementById("activePurpose").textContent = t.purpose || PURPOSES[t.state] || "Calibrated scientific UI theme";
-      document.getElementById("activeScience").textContent = t.science;
-      document.getElementById("activeWcag").textContent = `Text ${tc}:1 · Muted ${mc}:1 (${tc >= 7 ? "WCAG AAA" : "WCAG AA"})`;
-      document.getElementById("codeOut").textContent = toCssBlock(t);
+      document.getElementById("activePurpose").textContent = t.purpose;
     }
 
     window.__pickFlagship = (id) => {
@@ -195,38 +87,7 @@
       if (f) { flagshipSel.value = f.id; applyTheme(f, true); }
     };
 
-    function renderGrid() {
-      const st = stateSel.value;
-      const md = modeSel.value;
-      const list = generated.filter(t => (st === "all" || t.state === st) && (md === "all" || t.id.includes(`-${md}-`)));
-      grid.innerHTML = "";
-      for (const t of list.slice(0, 60)) {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "swatch-card";
-        btn.style.background = t.tokens.surfaceSolid;
-        btn.style.borderColor = t.tokens.border;
-        btn.style.color = t.tokens.text;
-        btn.innerHTML = `
-          <div style="font-weight:700;font-size:0.9rem;">${t.label}</div>
-          <div class="mono" style="color:${t.tokens.muted};font-size:0.75rem;margin-top:2px;">${t.wavelengthNm}</div>
-          <div style="color:${t.tokens.muted};font-size:0.78rem;margin-top:3px;">${PURPOSES[t.state]}</div>
-          <div class="dots">
-            <span class="dot" style="background:${t.tokens.bg}"></span>
-            <span class="dot" style="background:${t.tokens.surfaceSolid}"></span>
-            <span class="dot" style="background:${t.tokens.border}"></span>
-            <span class="dot" style="background:${t.tokens.text}"></span>
-            <span class="dot" style="background:${t.tokens.accent}"></span>
-          </div>`;
-        btn.onclick = () => applyTheme(t, true);
-        grid.appendChild(btn);
-      }
-      document.getElementById("catalogCount").textContent = `Showing ${Math.min(60, list.length)} of ${list.length} scientific palettes (filter by state or luminance above).`;
-    }
-
     flagshipSel.onchange = () => window.__pickFlagship(flagshipSel.value);
-    stateSel.onchange = renderGrid;
-    modeSel.onchange = renderGrid;
 
     document.getElementById("autoBtn").onclick = () => {
       const win = startAuto();
@@ -234,21 +95,16 @@
         const f = SCIENTIFIC_FLAGSHIPS.find(x => x.id === win.theme) || SCIENTIFIC_FLAGSHIPS[0];
         flagshipSel.value = f.id;
         applyTheme(f, false);
-        document.getElementById("copyStatus").textContent = `Auto Time active: ${win.name} window (${win.startHour}:00–${win.endHour}:00) -> ${win.theme}`;
+        document.getElementById("copyStatus").textContent = `Auto Time active: ${win.theme}`;
       }
     };
 
     document.getElementById("copyCss").onclick = () => {
       navigator.clipboard.writeText(toCssBlock(active));
-      document.getElementById("copyStatus").textContent = `✓ Copied 1-theme CSS for ${active.id}`;
-    };
-    document.getElementById("copyJson").onclick = () => {
-      navigator.clipboard.writeText(JSON.stringify(active.tokens, null, 2));
-      document.getElementById("copyStatus").textContent = `✓ Copied flat 7-token JSON for ${active.id}`;
+      document.getElementById("copyStatus").textContent = `Copied ${active.id}`;
     };
 
     applyTheme(SCIENTIFIC_FLAGSHIPS[0], false);
-    renderGrid();
   </script>
 </body>
 </html>
