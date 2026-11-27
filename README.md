@@ -11,6 +11,7 @@ Come in. Everything here has its place, and nothing is missing.
 - `bin/feather-themes.mjs` — list, apply, and verify themes.
 - `ui/` — fonts, buttons, icons, forms, layout, navigation, animations, graphics.
 - `skills/lightweight-themes/` — the agent skill for theming any app.
+- `skills/theme-contrast/` — the agent skill that keeps text visible when themes change.
 - [Live Use-Case Studio](https://kelli-dotcom.github.io/feather-themes/preview/) — interactive theme explorer, web or offline.
 
 Use it: `node bin/feather-themes.mjs apply morning-rose --format=css --out=./theme.css`
