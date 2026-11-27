@@ -4,6 +4,10 @@ All updates are opt-in. Nothing updates on its own. A dev reads this file
 first, then chooses whether to update, and stays on the old version for
 as long as they want.
 
+## Unreleased
+
+- New skill: `skills/media-light/` — lightens images, videos, animations, and GIFs without losing quality. Images: right size, WebP or AVIF, compress without over-compressing, lazy load. Videos: MP4 with H.264 (or H.265, WebM), right resolution and bitrate, short, poster image first. Animations: CSS, not video. GIFs: convert to video or replace with CSS; a GIF is heavy, poor quality, no sound. No theme, token, or engine file changed.
+
 ## 2.0.3 — 2026-11-25
 
 What changed in this release:

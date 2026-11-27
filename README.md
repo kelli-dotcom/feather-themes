@@ -12,6 +12,7 @@ Come in. Everything here has its place, and nothing is missing.
 - `ui/` — fonts, buttons, icons (31), forms, layout, navigation, animations, graphics.
 - `skills/lightweight-themes/` — the agent skill for theming any app.
 - `skills/theme-contrast/` — the agent skill that keeps text visible when themes change.
+- `skills/media-light/` — the agent skill that lightens images, videos, animations, and GIFs without losing quality.
 - [Live Use-Case Studio](https://kelli-dotcom.github.io/feather-themes/preview/) — interactive theme explorer, web or offline.
 
 Use it: `node bin/feather-themes.mjs apply morning-rose --format=css --out=./theme.css`
