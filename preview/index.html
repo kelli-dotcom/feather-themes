@@ -26,24 +26,26 @@
     <header>
       <img class="logo" src="../assets/feather-themes-logo.svg" alt="Feather Themes logo" width="96" height="105" />
       <p style="margin:14px 0 0;">1,092 themes that change with the time of day.</p>
+      <p style="margin:16px 0 0;"><a class="ft-btn" href="https://github.com/kelli-dotcom/feather-themes" target="_blank" rel="noopener">Get started &rarr; GitHub</a></p>
     </header>
 
-    <section class="ft-card" aria-label="Pick a theme">
+    <section class="ft-card" aria-label="Customize">
+      <h2 style="margin:0 0 4px;">Customize</h2>
+      <p class="muted" style="margin:0 0 16px;">Pick a theme, or let the time of day pick for you.</p>
       <label for="flagshipSel" style="display:block;margin-bottom:8px;">Pick a theme</label>
       <select id="flagshipSel" aria-label="Pick a theme"></select>
       <p id="activePurpose" style="margin:12px 0 0;"></p>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
         <button id="autoBtn" class="ft-btn" type="button">Auto Time</button>
-        <a class="ft-btn-secondary" href="https://github.com/kelli-dotcom/feather-themes" target="_blank" rel="noopener">GitHub Repo</a>
       </div>
     </section>
 
 
 
-    <section class="ft-card" aria-label="Scientific themes">
-      <h2 style="margin:0 0 4px;">Scientific themes</h2>
-      <p class="muted" style="margin:0 0 16px;">10 states, 1,080 themes. Tap one to try it.</p>
-      <div id="stateList" style="display:flex;flex-direction:column;gap:8px;"></div>
+    <section class="ft-card" aria-label="Themes">
+      <h2 style="margin:0 0 4px;">Themes</h2>
+      <p class="muted" style="margin:0 0 16px;">1,080 themes in 10 groups. Tap one to try it.</p>
+      <div id="stateList" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;"></div>
     </section>
 
     <section class="ft-card ft-rise" aria-label="What it looks like">
@@ -93,27 +95,41 @@
     import { startAuto, stopAuto, FEATHER_MODE_KEY } from "../auto/feather-auto-time.js";
 
     const SCIENTIFIC_FLAGSHIPS = [
-      { id: "calm-lavender", label: "Calm Lavender", purpose: "High-stress workflows (job search, finance, exam prep)", tokens: { bg: "#161524", surface: "#211f36", surfaceSolid: "#211f36", border: "#3a375c", text: "#eceaf9", muted: "#b4afd8", accent: "#a78bfa" } },
-      { id: "morning-rose", label: "Morning Rose", purpose: "Gentle morning wake-up without harsh white glare", tokens: { bg: "#fdf6f4", surface: "#fffbfa", surfaceSolid: "#fffbfa", border: "#e7d4cf", text: "#271b1d", muted: "#6e565b", accent: "#be5a74" } },
-      { id: "midday-sunlit", label: "Midday Sunlit", purpose: "Bright-room midday productivity and school Chromebooks", tokens: { bg: "#fcfaf2", surface: "#ffffff", surfaceSolid: "#ffffff", border: "#e5dec9", text: "#1c1917", muted: "#57534e", accent: "#0f766e" } },
+      { id: "calm-lavender", label: "Calm Lavender", purpose: "For hard days — job search, money, exam prep.", tokens: { bg: "#161524", surface: "#211f36", surfaceSolid: "#211f36", border: "#3a375c", text: "#eceaf9", muted: "#b4afd8", accent: "#a78bfa" } },
+      { id: "morning-rose", label: "Morning Rose", purpose: "A gentle morning wake-up, without the glare.", tokens: { bg: "#fdf6f4", surface: "#fffbfa", surfaceSolid: "#fffbfa", border: "#e7d4cf", text: "#271b1d", muted: "#6e565b", accent: "#be5a74" } },
+      { id: "midday-sunlit", label: "Midday Sunlit", purpose: "Bright midday light. Good for school Chromebooks.", tokens: { bg: "#fcfaf2", surface: "#ffffff", surfaceSolid: "#ffffff", border: "#e5dec9", text: "#1c1917", muted: "#57534e", accent: "#0f766e" } },
       { id: "sandstone", label: "Sandstone Light", purpose: "Afternoon-dip reading and calm sustained focus", tokens: { bg: "#f5f2eb", surface: "#fffdf9", surfaceSolid: "#fffdf9", border: "#d6cfc2", text: "#1c1917", muted: "#57534e", accent: "#047857" } },
-      { id: "forest", label: "Forest", purpose: "Long-form reading and mental restoration", tokens: { bg: "#08120e", surface: "#0f1f18", surfaceSolid: "#0f1f18", border: "#1e3a2f", text: "#e6f4ee", muted: "#86b3a0", accent: "#34d399" } },
+      { id: "forest", label: "Forest", purpose: "Long reads. Good for resting your mind.", tokens: { bg: "#08120e", surface: "#0f1f18", surfaceSolid: "#0f1f18", border: "#1e3a2f", text: "#e6f4ee", muted: "#86b3a0", accent: "#34d399" } },
       { id: "golden-hour", label: "Golden Hour", purpose: "Evening wind-down", tokens: { bg: "#1c1317", surface: "#291c22", surfaceSolid: "#291c22", border: "#4a333d", text: "#f7ebe8", muted: "#d6b2ba", accent: "#e5989b" } },
-      { id: "obsidian", label: "Obsidian", purpose: "Late-night zero-glare coding", tokens: { bg: "#09090b", surface: "#18181b", surfaceSolid: "#18181b", border: "#27272a", text: "#f4f4f5", muted: "#a1a1aa", accent: "#10b981" } },
-      { id: "paper-light", label: "Paper Light", purpose: "High-stakes operational, legal and financial dashboards", tokens: { bg: "#f8fafc", surface: "#ffffff", surfaceSolid: "#ffffff", border: "#cbd5e1", text: "#0f172a", muted: "#475569", accent: "#059669" } },
-      { id: "nord", label: "Nord", purpose: "Low-cognitive-load technical and analytics consoles", tokens: { bg: "#2e3440", surface: "#3b4252", surfaceSolid: "#3b4252", border: "#4c566a", text: "#eceff4", muted: "#d8dee9", accent: "#88c0d0" } },
-      { id: "tokyo-night", label: "Tokyo Night", purpose: "Late-night coding with a cool blue night palette", tokens: { bg: "#1a1b26", surface: "#24283b", surfaceSolid: "#24283b", border: "#3b4261", text: "#c0caf5", muted: "#7aa2f7", accent: "#7dcfff" } },
-      { id: "catppuccin", label: "Catppuccin", purpose: "Soft pastel dark theme for calm, low-strain reading and coding", tokens: { bg: "#1e1e2e", surface: "#313244", surfaceSolid: "#313244", border: "#45475a", text: "#cdd6f4", muted: "#a6adc8", accent: "#a6e3a1" } },
-      { id: "dracula", label: "Dracula", purpose: "High-contrast dark coding with a vivid accent", tokens: { bg: "#1e1f29", surface: "#282a36", surfaceSolid: "#282a36", border: "#44475a", text: "#f8f8f2", muted: "#bd93f9", accent: "#50fa7b" } },
+      { id: "obsidian", label: "Obsidian", purpose: "Late at night. Dark, with no glare.", tokens: { bg: "#09090b", surface: "#18181b", surfaceSolid: "#18181b", border: "#27272a", text: "#f4f4f5", muted: "#a1a1aa", accent: "#10b981" } },
+      { id: "paper-light", label: "Paper Light", purpose: "For serious work — legal and money.", tokens: { bg: "#f8fafc", surface: "#ffffff", surfaceSolid: "#ffffff", border: "#cbd5e1", text: "#0f172a", muted: "#475569", accent: "#059669" } },
+      { id: "nord", label: "Nord", purpose: "Plain and quiet. Good for numbers and charts.", tokens: { bg: "#2e3440", surface: "#3b4252", surfaceSolid: "#3b4252", border: "#4c566a", text: "#eceff4", muted: "#d8dee9", accent: "#88c0d0" } },
+      { id: "tokyo-night", label: "Tokyo Night", purpose: "Late-night coding. Cool blue, easy on the eyes.", tokens: { bg: "#1a1b26", surface: "#24283b", surfaceSolid: "#24283b", border: "#3b4261", text: "#c0caf5", muted: "#7aa2f7", accent: "#7dcfff" } },
+      { id: "catppuccin", label: "Catppuccin", purpose: "Soft pastels. Calm and easy to read.", tokens: { bg: "#1e1e2e", surface: "#313244", surfaceSolid: "#313244", border: "#45475a", text: "#cdd6f4", muted: "#a6adc8", accent: "#a6e3a1" } },
+      { id: "dracula", label: "Dracula", purpose: "Dark, with a bright pop of colour.", tokens: { bg: "#1e1f29", surface: "#282a36", surfaceSolid: "#282a36", border: "#44475a", text: "#f8f8f2", muted: "#bd93f9", accent: "#50fa7b" } },
     ];
+
+    // Plain words for each group of themes. What it feels like, when to use it.
+    const STATE_WORDS = {
+      calm: "Cool colours that help you slow down.",
+      focus: "Clear and sharp. Good when you need to get things done.",
+      energy: "Warm amber. Good for a lift when you are dragging.",
+      romantic: "Soft rose. Warm and easy on the eyes.",
+      morning: "Like sunrise. Gentle light for the morning.",
+      midday: "Bright daylight. Good for the middle of the day.",
+      dusk: "Warm amber for the evening. Easy on tired eyes.",
+      night: "Dark and quiet. Good for late at night.",
+      grounded: "Calm green. Steady and easy to look at.",
+      executive: "Plain and neutral. Nothing in the way.",
+    };
 
     const generated = generateAllScientificThemes();
     const stateList = document.getElementById("stateList");
-    stateList.innerHTML = COGNITIVE_STATES.map(s => `<button type="button" class="ft-btn-secondary" data-state="${s.id}" style="text-align:left;display:block;width:100%;"><strong>${s.label}</strong> &mdash; ${s.science}</button>`).join("");
+    stateList.innerHTML = COGNITIVE_STATES.map(s => `<button type="button" class="ft-btn-secondary" data-state="${s.id}" style="text-align:left;display:block;width:100%;"><strong>${s.label}</strong><span style="display:block;font-weight:normal;margin-top:2px;">${STATE_WORDS[s.id]}</span></button>`).join("");
     stateList.querySelectorAll("button").forEach(btn => {
       btn.onclick = () => {
         const theme = generated.find(x => x.state === btn.dataset.state);
-        if (theme) { applyTheme(theme, true); document.getElementById("activePurpose").textContent = theme.purpose || theme.science; }
+        if (theme) { applyTheme(theme, true); document.getElementById("activePurpose").textContent = STATE_WORDS[btn.dataset.state]; }
       };
     });
 
@@ -136,7 +152,7 @@
       r.setProperty("--ft-text", t.tokens.text);
       r.setProperty("--ft-muted", t.tokens.muted);
       r.setProperty("--ft-accent", t.tokens.accent);
-      document.getElementById("activePurpose").textContent = t.purpose;
+      document.getElementById("activePurpose").textContent = t.purpose || "";
     }
 
     window.__pickFlagship = (id) => {
