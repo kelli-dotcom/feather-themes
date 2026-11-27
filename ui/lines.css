@@ -1,0 +1,94 @@
+/* Feather Lines — dividers, feather light.
+   Use on its own, or with ui/fonts.css, ui/buttons.css,
+   and ui/bullets.css. One class on an <hr> picks the line.
+   The line is drawn with plain CSS only, no image, no
+   JavaScript, so the page stays light in every theme.
+   Colours come only from the theme tokens in themes/themes.css,
+   so lines flip with data-theme and with auto time mode,
+   with no extra code. No new colours, no hardcoded colours.
+   Source: feather-themes for tokens, feather-speed for
+   lightness, repoverse-master FEATHER_STANDARD.md for the
+   budgets. Plain words, from empathy-marketing-skills.
+
+   How to use:
+   <hr class="ft-line">
+   <hr class="ft-line ft-line-accent">
+   The six lines: hairline (the plain one), accent, dotted,
+   fade, mark, double. Hairline is the default pick, for
+   breaking one section from the next. Accent is for the
+   break that matters most. Mark carries the small diamond,
+   the same cut shape as the bullet diamond, for a section
+   break that should feel finished. Fade is for a soft end
+   to a page, where a hard edge would feel abrupt.
+
+   A line is a break, not a decoration. If two lines sit
+   next to each other with nothing between them, one of
+   them should come out. */
+
+.ft-line {
+  border: 0;
+  height: 1px;
+  margin: 24px 0;
+  background: var(--ft-border);
+}
+
+/* Hairline — one thin line in border colour. The plain one,
+   for breaking one section from the next. */
+.ft-line-hairline {
+  height: 1px;
+  background: var(--ft-border);
+}
+
+/* Accent — one firm line in accent. For the break that
+   matters most on the page, like before the final step. */
+.ft-line-accent {
+  height: 2px;
+  background: var(--ft-accent);
+}
+
+/* Dotted — a row of dots in border colour. For a light
+   break inside one section, not between sections. */
+.ft-line-dotted {
+  height: 0;
+  background: transparent;
+  border-top: 2px dotted var(--ft-border);
+}
+
+/* Fade — a line that fades out at both ends, in border
+   colour. For a soft end to a page, where a hard edge
+   would feel abrupt. */
+.ft-line-fade {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ft-border), transparent);
+}
+
+/* Mark — a hairline with one small diamond in the middle,
+   in accent. The same cut shape as the bullet diamond.
+   For a section break that should feel finished. */
+.ft-line-mark {
+  position: relative;
+  overflow: visible;
+  height: 1px;
+  background: var(--ft-border);
+}
+
+.ft-line-mark::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--ft-accent);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Double — two thin lines with a gap between them, in
+   border colour. For a firm break between two big parts
+   of a page, like the end of the main content. */
+.ft-line-double {
+  height: 4px;
+  background: transparent;
+  border-top: 1px solid var(--ft-border);
+  border-bottom: 1px solid var(--ft-border);
+}

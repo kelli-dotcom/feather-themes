@@ -1,0 +1,118 @@
+/* Feather Bullets — list markers, feather light.
+   Use on its own, or with ui/fonts.css and ui/buttons.css.
+   One class on the list picks the marker. The marker is
+   drawn with plain CSS only, no image, no icon file, no
+   JavaScript, so the list stays light in every theme.
+   Colours come only from the theme tokens in themes/themes.css,
+   so bullets flip with data-theme and with auto time mode,
+   with no extra code. No new colours, no hardcoded colours.
+   Source: feather-themes for tokens, feather-speed for
+   lightness, repoverse-master FEATHER_STANDARD.md for the
+   budgets. Plain words, from empathy-marketing-skills.
+
+   How to use:
+   <ul class="ft-list ft-list-feather">
+     <li>First point</li>
+     <li>Second point</li>
+   </ul>
+   The six markers: feather (the signature leaf), diamond,
+   chevron, dash, check, dot. Feather is the default pick,
+   the one that says this list came from Feather. Check is
+   for a list of things done or included, like benefits.
+   Dot is the quiet one, for a plain list. A nested list
+   needs its own class, or it falls back to the plain dot.
+
+   Sizes are in em, so a marker grows with the text it
+   sits next to. The marker sits on the first line only,
+   so a long item that wraps to two lines keeps its text
+   lined up under itself, not under the marker. */
+
+.ft-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ft-list li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-top: 6px;
+}
+
+.ft-list li:first-child {
+  margin-top: 0;
+}
+
+.ft-list li ul,
+.ft-list li ol {
+  margin-top: 6px;
+}
+
+.ft-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+/* Feather — the signature. A small leaf, the shape of a
+   feather, in accent. No other kit marks a list this way. */
+.ft-list-feather li::before {
+  top: 0.46em;
+  width: 0.62em;
+  height: 0.62em;
+  background: var(--ft-accent);
+  border-radius: 100% 0 100% 0;
+}
+
+/* Diamond — a square turned on its corner, in accent.
+   Sharp, cut, not soft. Matches the Feather button shapes. */
+.ft-list-diamond li::before {
+  top: 0.5em;
+  width: 0.55em;
+  height: 0.55em;
+  background: var(--ft-accent);
+  transform: rotate(45deg);
+}
+
+/* Chevron — a small arrowhead pointing forward, in accent.
+   For a list that moves somewhere, like next steps. */
+.ft-list-chevron li::before {
+  top: 0.5em;
+  left: 0.1em;
+  width: 0.5em;
+  height: 0.5em;
+  border-top: 2px solid var(--ft-accent);
+  border-right: 2px solid var(--ft-accent);
+  transform: rotate(45deg);
+}
+
+/* Dash — one short bar, in accent. The calmest marker.
+   For a list that should read, not shout. */
+.ft-list-dash li::before {
+  top: 0.72em;
+  width: 0.9em;
+  height: 2px;
+  background: var(--ft-accent);
+}
+
+/* Check — a tick, in accent. For things done, included,
+   or promised, like a benefits list. */
+.ft-list-check li::before {
+  top: 0.38em;
+  left: 0.12em;
+  width: 0.38em;
+  height: 0.68em;
+  border-right: 2px solid var(--ft-accent);
+  border-bottom: 2px solid var(--ft-accent);
+  transform: rotate(45deg);
+}
+
+/* Dot — one small round dot, in accent. The quiet one.
+   For a plain list that needs nothing more. */
+.ft-list-dot li::before {
+  top: 0.55em;
+  width: 0.45em;
+  height: 0.45em;
+  background: var(--ft-accent);
+  border-radius: 50%;
+}

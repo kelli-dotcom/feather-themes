@@ -9,7 +9,7 @@ Come in. Everything here has its place, and nothing is missing.
 - `themes/` — the 12 flagships (`themes.css`, `tokens.json`); the engine builds the other 1,080.
 - `src/engine.mjs` — builds the 1,080 generated themes.
 - `bin/feather-themes.mjs` — list, apply, and verify themes.
-- `ui/` — fonts, buttons, icons (86), forms, layout, navigation, animations, graphics.
+- `ui/` — fonts, buttons, icons (86), forms, layout, navigation, animations, graphics, bullets (6), lines (6).
 - `skills/lightweight-themes/` — the agent skill for theming any app.
 - `skills/theme-contrast/` — the agent skill that keeps text visible when themes change.
 - `skills/media-light/` — the agent skill that lightens images, videos, animations, and GIFs without losing quality.
